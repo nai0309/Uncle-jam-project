@@ -1,0 +1,34 @@
+/* body */
+body{
+    background-color: white;
+}
+
+#brandStory{
+    padding: 50px;
+}
+
+#storyBox{
+    position: relative;
+}
+
+#storyImg img{
+    width: 500px;
+    height: 600px;
+    object-fit: cover;
+    border-radius:0.5rem ;
+    box-shadow: -2rem -2rem #e8ded4;
+}
+
+/* 故事內容 */
+#storyText{
+    padding: 1rem;
+    color: white;
+    border-width: 5px;
+    border-style: solid;
+    border-image: 
+      linear-gradient(
+        to left, 
+        #e8ded4, 
+        rgb(255, 255, 255)
+      )1;
+}
