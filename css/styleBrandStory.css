@@ -1,34 +1,54 @@
 /* body */
-body{
+
+body {
     background-color: white;
 }
 
-#brandStory{
-    padding: 50px;
-}
-
-#storyBox{
+#storyBox {
     position: relative;
 }
 
-#storyImg img{
-    width: 500px;
-    height: 600px;
-    object-fit: cover;
-    border-radius:0.5rem ;
-    box-shadow: -2rem -2rem #e8ded4;
+#storyImg {
+    border-radius: 0.5rem;
+    padding: 5px;
 }
 
+
 /* 故事內容 */
-#storyText{
-    padding: 1rem;
-    color: white;
-    border-width: 5px;
-    border-style: solid;
-    border-image: 
-      linear-gradient(
-        to left, 
-        #e8ded4, 
-        rgb(255, 255, 255)
-      )1;
+
+@media (min-width: 992px) {
+    #footerZone {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    #brandStory {
+        height: 100%;
+    }
+    #storyImg {
+        border-radius: 0.5rem;
+        padding: 5px;
+        box-shadow: -2rem -2rem #e8ded4;
+    }
+    #storyImg img{
+        border-radius: 0.5rem;
+    }
+    #brandStory {
+        padding: 50px;
+    }
+    #storyText {
+        padding: 1rem;
+        color: white;
+        border-width: 5px;
+        border-style: solid;
+        border-image: linear-gradient( to left, #e8ded4, rgb(255, 255, 255))1;
+    }
+}
+
+@media (max-width: 576px) {
+    #storyImg img{
+        padding: 3.5rem 15px 0 15px;
+    }    
 }

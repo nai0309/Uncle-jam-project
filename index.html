@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Uncle醬-Home</title>
 
-  <!-- slick -->
-  <link rel="stylesheet" href="css/slick.css">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="css/fontawesome.css">
+  <!-- slide from codepen -->
+  <link rel="stylesheet" href="css/productSlide.css">
   <!-- bootstrap -->
   <link rel="stylesheet" href="css/bootstrap.css" />
   <!-- google font -->
@@ -34,7 +34,7 @@
           <a id="dropdown-about" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">關於我們</a>
           <div class="dropdown-menu">
             <a class="dropdown-item font-weight-normal" href="brandStory.html">品牌故事</a>
-            <a class="dropdown-item font-weight-normal" href="contact.html">聯絡資訊</a>
+            <a class="dropdown-item font-weight-normal" href="contact.html">聯絡我們</a>
           </div>
         </li>
         <!-- logo start -->
@@ -66,7 +66,7 @@
 
   <!-- 首頁幻燈片start -->
   <section id="slideZone">
-    <div id="slide" class="carousel slide" data-ride="carousel">
+    <div id="slide" class="carousel slide carousel-fade" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#slide" data-slide-to="0" class="active"></li>
         <li data-target="#slide" data-slide-to="1"></li>
@@ -94,10 +94,10 @@
   <!-- 首頁幻燈片end -->
 
   <!-- 關於我們start -->
-  <section id="aboutUsZone" class="h-50 bg-light p-4 d-flex align-items-center">
+  <section id="aboutUsZone" class="bg-light p-2 p-md-4 d-flex align-items-center">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6 mb-3">
           <h1 class="text-uncle-title">About Uncle醬</h1>
           <p class="text-uncle-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
             fugiat
@@ -105,104 +105,54 @@
             recusandae ratione hic repellendus asperiores!</p>
           <button class="btn btn-outline-uncle"><a href="#">read more</a></button>
         </div>
-        <div class="col-12 col-lg-3">
-          <img src="img/product/pie-lemon-one.jpg" height="300px" alt="" title="">
+        <div class="col-12 col-lg-3 mb-3">
+          <img class="img-fluid" src="img/product/pie-lemon-one.jpg" alt="" title="">
         </div>
-        <div class="col-12 col-lg-3">
-          <img src="img/product/pie-taro-one.jpg" height="300px" alt="" title="">
+        <div class="col-12 col-lg-3 mb-3">
+          <img class="img-fluid" src="img/product/pie-taro-one.jpg" alt="" title="">
         </div>
       </div>
     </div>
   </section>
   <!-- 關於我們end -->
 
+  <!-- <h1 class="text-uncle-title text-center">All Product</h1> -->
   <!-- 全部產品start -->
-  <section id="productZone" class="h-50 my-4 d-flex flex-column justify-content-center">
-    <div class="px-5">
-      <h1 class="text-uncle-title text-center mb-3">All Product</h1>
-
-      <!-- slick start-->
-      <div class="productSlick d-flex justify-content-center align-items-center px-5 pt-3">
-        <div class="d-flex flex-column align-items-center justify-content-center mx-2">
-          <a href="#">
-            <img src="img/product/pie-lemon-one.jpg" alt="">
-            <h4 class="text-center py-3">
-              蛋糕系列
-            </h4>
-          </a>
-        </div>
-        <div class="d-flex flex-column align-items-center mx-2">
-          <img src="img/product/pie-lemon-one.jpg" alt="">
-          <h4 class="text-center py-3">
-            <a href="">腰果醬</a>
-          </h4>
-        </div>
-        <div class="d-flex flex-column align-items-center mx-2">
-          <img src="img/product/pie-lemon-one.jpg" alt="">
-          <h4 class="text-center py-3">
-            <a href="">派系列</a>
-          </h4>
-        </div>
-        <div class="d-flex flex-column align-items-center mx-2">
-          <img src="img/product/pie-lemon-one.jpg" alt="">
-          <h4 class="text-center py-3">
-            <a href="">歐蕾捲</a>
-          </h4>
-        </div>
-        <div class="d-flex flex-column align-items-center mx-2">
-          <img src="img/product/pie-lemon-one.jpg" alt="">
-          <h4 class="text-center py-3">
-            <a href="">燕麥蛋糕</a>
-          </h4>
-        </div>
-        <div class="d-flex flex-column align-items-center mx-2">
-          <img src="img/product/pie-lemon-one.jpg" alt="">
-          <h4 class="text-center py-3">
-            <a href="">手工餅乾</a>
-          </h4>
-        </div>
-        <div class="d-flex flex-column align-items-center mx-2">
-          <img src="img/product/pie-lemon-one.jpg" alt="">
-          <h4 class="text-center py-3">
-            <a href="">牛軋糖</a>
-          </h4>
-        </div>
-      </div>
-      <!-- slick end-->
-    </div>
-  </section>
+  <h1 class="text-center my-4">所有商品</h1>
+  <div id="productSlide">
+     
+  </div>
   <!-- 全部產品end -->
 
-  <!-- footer start -->
+    <!-- footer start -->
   <footer id="footerZone" class="p-2 uncle-bg-dark">
-    <div class="text-uncle-light d-flex align-items-center justify-content-between">
-      <h3><a href="index.html">Uncle醬</a></h3>
-      <div>
-        <span class="mr-2"><a href="brandStory.html">品牌故事</a>｜</span>
-        <span class="mr-2"><a href="member.html">會員專區</a>｜</span>
-        <span class="mr-2"><a href="">購物須知</a>｜</span>
-        <span class="mr-2"><a href="contact.html">聯絡資訊</a>｜</span>
+    <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
+      <h3><a class="h3" href="index.html">Uncle醬</a></h3>
+      <div id=footerList>
+        <span class="mr-1"><a href="brandStory.html">品牌故事</a>｜</span>
+        <span class="mr-1"><a href="member.html">會員專區</a>｜</span>
+        <span class="mr-1"><a href="">購物須知</a>｜</span>
+        <span class="mr-1"><a href="contact.html">聯絡我們</a>｜</span>
       </div>
-      <span>copyright©Nai Hui</span>
+      <span class="copyright">copyright©Nai Hui</span>
     </div>
     <!-- footer end -->
 
 
-    <!-- bootstrap -->
+   <!-- Jqery -->
     <script src="js/jquery-3.4.1.min.js"></script>
+     
+
+    <!--slide from codepen partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/4.2.1/react-transition-group.min.js'></script>
+    <!-- slide from codepen -->
+    <script src="js/productSlide.js"></script>
+    <!-- bootstrap -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- slick -->
-    <script src="js/slick.js"></script>
 
-    <script>
-      $('.productSlick').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1
-      });
-
-    </script>
 </body>
 
 </html>

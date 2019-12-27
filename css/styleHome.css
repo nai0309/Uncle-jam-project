@@ -77,13 +77,6 @@ a:hover {
         padding: 8px 0 16px 0;
     }
 }
-@media (min-width: 576px) {
-/* .navbar{
-    height: 4rem;
-} */
-}
-
-
 
 /* carousel */
 
@@ -100,7 +93,9 @@ a:hover {
         object-fit: cover;
     }
 }
-
+#slideZone .slide{
+opacity: 1;
+}
 
 /* 按鈕 */
 .btn-outline-uncle {
@@ -132,41 +127,26 @@ a:hover {
 /* 關於我們 */
 
 #aboutUsZone img {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
     box-shadow: 3px 3px 10px #695229b4;
     border-radius: 5px;
 }
 
+@media (max-width: 576px) {
+    #aboutUsZone{
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    #aboutUsZone{
+        height: 50%;
+    }
+}
+
+
 /* 所有產品 */
 
-#productZone .slick-track,#productZone img {
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
-    object-fit: cover;
-}
 
-.position-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#productZone .btn:focus, .btn.focus {
-    box-shadow: none;
-}
-
-#productZone a:focus {
-    outline: 0;
-    box-shadow: none;
-}
-
-#productZone a:hover {
-    filter: blur(2);
-    color: #F8D487;
-}
 
 /* footer */
 
@@ -177,4 +157,18 @@ a:hover {
 #footerZone a:hover {
     color: #F8D487;
     text-decoration: none;
+}
+.copyright {
+    letter-spacing: 3px;
+}
+@media (max-width: 576px) {
+    #footerList a {
+        font-size: 0.8rem;
+    }
+    #footerList {
+        margin-bottom: 3px;
+    }
+    .copyright {
+        font-size: 0.9rem;
+    }
 }

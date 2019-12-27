@@ -22,9 +22,16 @@ body {
     width: 100px;
     height: 40px;
     border-radius: 30px;
-    /* background-color: #F8D487;
-    border-color: #F8D487; */
+
 }
+
+@media (max-width: 576px) {
+    #productList {
+        height: 2rem;
+    }
+    
+}
+
 
 /* 產品陳列 */
 
@@ -33,9 +40,6 @@ body {
 }
 
 .pro_img img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -44,16 +48,11 @@ body {
 }
 
 .pro_more {
-    display: none;
     width: 100%;
-    height: 400px;
+    height: 100%;
+    display: none;
     background-color: rgba(255, 255, 255, 0.411);
     position: absolute;
-}
-.pro_more img{
-    width: 250px;
-    height: 250px;
-    line-height: 125px;
 }
 
 .pro_img:hover .pro_more {
