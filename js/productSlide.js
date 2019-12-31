@@ -2,7 +2,7 @@ const slideData = [
   {
     index: 0,
     headline: 'GO Get Pie',
-    button: 'Shop now',
+    button: 'Order now',
     src: './img/product/pie-lemon-slide.jpg',
     link:'#'
   },
@@ -10,7 +10,7 @@ const slideData = [
   {
     index: 1,
     headline: 'GO Get Cashew Butter',
-    button: 'Shop now',
+    button: 'Order now',
     src: './img/product/pie-taro-slide.jpg',
     link:'#'
   },
@@ -18,7 +18,7 @@ const slideData = [
   {
     index: 2,
     headline: 'GO Get Cake',
-    button: 'Shop now',
+    button: 'Order now',
     src: './img/product/cake-carrot-slide.jpg',
     link:'#'
   },
@@ -26,7 +26,7 @@ const slideData = [
   {
     index: 3,
     headline: 'GO Get Cookies',
-    button: 'Shop now',
+    button: 'Order now',
     src: './img/product/cookies.jpg',
     link:'#'
   },
@@ -34,9 +34,9 @@ const slideData = [
   {
     index: 4,
     headline: 'GO Get Oatcake',
-    button: 'Shop now',
+    button: 'Order now',
     src: './img/product/oatcake-1.jpg',
-    link:'https://bootstrap.hexschool.com/docs/4.2/getting-started/introduction/'
+    link:'#'
   }];
 
 
