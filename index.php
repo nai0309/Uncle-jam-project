@@ -24,8 +24,7 @@
   <!-- 導覽列 start -->
   <nav class="navbar navbar-expand-lg navbar-color navbar-bg fixed-top">
     <a class="navbar-brand d-lg-none d-sm-block" href="#">LOGO</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span
-        class="navbar-toggler-icon"></span></button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbar">
 
       <ul class="navbar-nav m-auto">
@@ -94,7 +93,7 @@
   <!-- 首頁幻燈片end -->
 
   <!-- 關於我們start -->
-  <section id="aboutUsZone" class="bg-light p-2 p-md-4 d-flex align-items-center">
+  <section id="aboutUsZone" class="p-2 p-md-4 d-flex align-items-center">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6 mb-3">
@@ -116,15 +115,14 @@
   </section>
   <!-- 關於我們end -->
 
-  <!-- <h1 class="text-uncle-title text-center">All Product</h1> -->
   <!-- 全部產品start -->
-  <h1 class="text-center my-4">所有商品</h1>
+  <!-- <h1 class="text-center my-4">所有商品</h1> -->
   <div id="productSlide">
-     
+
   </div>
   <!-- 全部產品end -->
 
-    <!-- footer start -->
+  <!-- footer start -->
   <footer id="footerZone" class="p-2 uncle-bg-dark">
     <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
       <h3><a class="h3" href="index.php">Uncle醬</a></h3>
@@ -139,19 +137,20 @@
     <!-- footer end -->
 
 
-   <!-- Jqery -->
+    <!-- Jqery -->
     <script src="js/jquery-3.4.1.min.js"></script>
-     
+
 
     <!--slide from codepen partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/4.2.1/react-transition-group.min.js'></script>
-    <!-- slide from codepen -->
-    <script src="js/productSlide.js"></script>
+      <!-- slide from codepen -->
+      <script src="js/productSlide.js"></script>
     <!-- bootstrap -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+  
 
 </body>
 

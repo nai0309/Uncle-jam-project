@@ -4,7 +4,7 @@ const slideData = [
     headline: 'GO Get Pie',
     button: 'Order now',
     src: './img/product/pie-lemon-slide.jpg',
-    link:'#'
+    link: '#'
   },
 
   {
@@ -12,7 +12,7 @@ const slideData = [
     headline: 'GO Get Cashew Butter',
     button: 'Order now',
     src: './img/product/pie-taro-slide.jpg',
-    link:'#'
+    link: '#'
   },
 
   {
@@ -20,7 +20,7 @@ const slideData = [
     headline: 'GO Get Cake',
     button: 'Order now',
     src: './img/product/cake-carrot-slide.jpg',
-    link:'#'
+    link: '#'
   },
 
   {
@@ -28,7 +28,7 @@ const slideData = [
     headline: 'GO Get Cookies',
     button: 'Order now',
     src: './img/product/cookies.jpg',
-    link:'#'
+    link: '#'
   },
 
   {
@@ -36,7 +36,7 @@ const slideData = [
     headline: 'GO Get Oatcake',
     button: 'Order now',
     src: './img/product/oatcake-1.jpg',
-    link:'#'
+    link: '#'
   }];
 
 
@@ -79,7 +79,7 @@ class Slide extends React.Component {
   }
 
   render() {
-    const { link,src, button, headline, index } = this.props.slide;
+    const { link, src, button, headline, index } = this.props.slide;
     const current = this.props.current;
     let classNames = 'slide';
 
@@ -110,8 +110,9 @@ class Slide extends React.Component {
           React.createElement("h2", { className: "slide__headline" }, headline),
           React.createElement("a", {
             className: "btn__link",
-          href:link },
-          React.createElement("button", { className: "slide__action btn" }, button)))));
+            href: link
+          },
+            React.createElement("button", { className: "slide__action btn" }, button)))));
 
 
 
@@ -143,7 +144,7 @@ class Slider extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { current: 0 };
+    this.state = { current: 1 };
     this.handlePreviousClick = this.handlePreviousClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
     this.handleSlideClick = this.handleSlideClick.bind(this);
@@ -190,10 +191,11 @@ class Slider extends React.Component {
 
 
     return (
-      React.createElement("div", { className: "slider", "aria-labelledby": headingId },
-        React.createElement("ul", { className: "slider__wrapper", style: wrapperTransform },
-          React.createElement("h3", { id: headingId, class: "visuallyhidden" }, heading),
+      React.createElement("div",{className:"slider_container"},
+      React.createElement("h1",{className:"text-center"},"所有商品"),
 
+      React.createElement("div",{ className: "slider", "aria-labelledby": headingId },
+        React.createElement("ul", { className: "slider__wrapper", style: wrapperTransform },
           slides.map(slide => {
             return (
               React.createElement(Slide, {
@@ -219,7 +221,7 @@ class Slider extends React.Component {
             type: "next",
             title: "Go to next slide",
             handleClick: this.handleNextClick
-          }))));
+          })))));
 
 
 
