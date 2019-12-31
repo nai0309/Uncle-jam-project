@@ -25,8 +25,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-color navbar-bg fixed-top">
       <a class="navbar-brand d-lg-none d-sm-block" href="index.php">LOGO</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span
-          class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbar">
 
         <ul class="navbar-nav m-auto">
@@ -67,21 +66,62 @@
   <!-- 導覽列 end -->
 
 
-  <!-- 品牌故事 start -->
-  <section id="brandStory">
-    <div class="h-100 container d-flex align-items-center">
+  <!-- 聯絡我們 start -->
+  <section id="contactUs">
+    <div class="container-fluid">
       <div class="row">
-        <div id="storyImg" class="col-md-6 mt-3">
-        <img class="img-fluid" src="img/product/pie-lemon-slide.jpg" alt="">
-      </div>
-        <div id="storyText" class="col-md-6 my-3 d-flex justify-content-center flex-column">
-          <h1 class="h1 text-uncle-title">About Uncle醬</h1>
-          <p class="text-uncle-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est magni cupiditate deserunt animi eos, neque rem repellat hic aut beatae aspernatur provident voluptatum vitae voluptas ipsam. Molestias atque porro culpa soluta perferendis nisi consequuntur, minima ea maxime. Quo porro modi voluptas accusantium, quasi, dicta nesciunt repellat quaerat mollitia praesentium vel voluptatibus dolorum corrupti magnam numquam deserunt iusto maiores esse, ratione corporis qui voluptatum! Voluptatibus, ducimus dolorum </p>
+        <div class="col-6">
+          <img class="img-fluid" src="img/product/pie-taro.jpg" alt="" title="">
+        </div>
+        <div class="col-6 p-5">
+          <h3>聯絡我們</h3>
+          <form>
+            <div class="form-row">
+              <div class="col-12 mb-3">
+                <label for="name">姓名</label>
+                <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required>
+             </div>
+              <div class="col-12 mb-3">
+                <label for="gender">性別</label>
+                <input type="checkbox" class="form-control" id="gender" placeholder="Last name" value="Otto" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="validationServerUsername">Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                </div>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="validationServer03">City</label>
+                <input type="text" class="form-control" id="validationServer03" placeholder="City" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="validationServer04">State</label>
+                <input type="text" class="form-control" id="validationServer04" placeholder="State" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="validationServer05">Zip</label>
+                <input type="text" class="form-control" id="validationServer05" placeholder="Zip" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                  Agree to terms and conditions
+                </label>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </form>
         </div>
       </div>
     </div>
   </section>
-  <!-- 品牌故事 end-->
+  <!-- 聯絡我們 end-->
 
   <!-- footer start -->
   <footer id="footerZone" class="p-2 uncle-bg-dark">
@@ -96,7 +136,7 @@
       <span class="copyright">copyright©Nai Hui</span>
     </div>
     <!-- footer end -->
-    
+
     <!-- bootstrap -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
