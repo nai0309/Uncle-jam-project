@@ -21,7 +21,7 @@
 
 <body>
   <?php
-  $db = new PDO("mysql:host=127.0.0.1;dbname=uncle_jam;charset=utf8", "root", "");
+  $db = new PDO("mysql:host=127.0.0.1;dbname=s1080412;charset=utf8", "root", "");
   $sql = "SELECT * FROM product WHERE 1";
   $products = $db->query($sql)->fetchAll();
   ?>
@@ -29,28 +29,28 @@
   <!-- 導覽列 start -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-color navbar-bg fixed-top">
-      <a class="navbar-brand d-lg-none d-sm-block" href="index.html">LOGO</a>
+      <a class="navbar-brand d-lg-none d-sm-block" href="index.php">LOGO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbar">
 
         <ul class="navbar-nav m-auto">
-          <li id="home" class="nav-item"><a class="nav-link mr-4" href="index.html">首頁</a></li>
+          <li id="home" class="nav-item"><a class="nav-link mr-4" href="index.php">首頁</a></li>
           <li class="nav-item dropdown">
             <a id="dropdown-about" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">關於我們</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item font-weight-normal" href="brandStory.html">品牌故事</a>
-              <a class="dropdown-item font-weight-normal" href="contact.html">聯絡我們</a>
+              <a class="dropdown-item font-weight-normal" href="brandStory.php">品牌故事</a>
+              <a class="dropdown-item font-weight-normal" href="contact.php">聯絡我們</a>
             </div>
           </li>
           <!-- logo start -->
           <li class="nav-brand">
-            <a class="nav-link d-none d-lg-block mr-4" href="index.html">Uncle醬</a>
+            <a class="nav-link d-none d-lg-block mr-4" href="index.php">Uncle醬</a>
           </li>
           <!-- logo end -->
           <li class="nav-item dropdown">
             <a id="dropdown-product" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">全部商品</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item font-weight-normal" href="product.html">所有商品</a>
+              <a class="dropdown-item font-weight-normal" href="product.php">所有商品</a>
               <a class="dropdown-item font-weight-normal" href="#">腰果醬</a>
               <a class="dropdown-item font-weight-normal" href="#">蛋糕系列</a>
               <a class="dropdown-item font-weight-normal" href="#">派系列</a>
@@ -60,7 +60,7 @@
               <a class="dropdown-item font-weight-normal" href="#">牛軋糖</a>
             </div>
           </li>
-          <li id="home" class="nav-item"><a class="nav-link mr-4" href="member.html">會員專區</a></li>
+          <li id="home" class="nav-item"><a class="nav-link mr-4" href="member.php">會員專區</a></li>
         </ul>
         <div id="join">
           <a class="navbar-item" href="#">登入/註冊</a>
@@ -224,12 +224,12 @@
   <!-- footer start -->
   <footer id="footerZone" class="p-2 uncle-bg-dark">
     <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
-      <h3><a class="h3" href="index.html">Uncle醬</a></h3>
+      <h3><a class="h3" href="index.php">Uncle醬</a></h3>
       <div id=footerList>
-        <span class="mr-1"><a href="brandStory.html">品牌故事</a>｜</span>
-        <span class="mr-1"><a href="member.html">會員專區</a>｜</span>
+        <span class="mr-1"><a href="brandStory.php">品牌故事</a>｜</span>
+        <span class="mr-1"><a href="member.php">會員專區</a>｜</span>
         <span class="mr-1"><a href="">購物須知</a>｜</span>
-        <span class="mr-1"><a href="contact.html">聯絡我們</a>｜</span>
+        <span class="mr-1"><a href="contact.php">聯絡我們</a>｜</span>
       </div>
       <span class="copyright">copyright©Nai Hui</span>
     </div>
