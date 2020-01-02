@@ -32,7 +32,7 @@
         <li class="nav-item dropdown">
           <a id="dropdown-about" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">關於我們</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item font-weight-normal" href="brandStory.php">品牌故事</a>
+            <a class="dropdown-item font-weight-normal" href="#brandStory">品牌故事</a>
             <a class="dropdown-item font-weight-normal" href="contact.php">聯絡我們</a>
           </div>
         </li>
@@ -44,7 +44,7 @@
         <li class="nav-item dropdown">
           <a id="dropdown-product" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">商品列表</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item font-weight-normal" href="product.php">所有商品</a>
+            <a class="dropdown-item font-weight-normal" href="#productSlide">所有商品</a>
             <a class="dropdown-item font-weight-normal" href="#">腰果醬</a>
             <a class="dropdown-item font-weight-normal" href="#">蛋糕系列</a>
             <a class="dropdown-item font-weight-normal" href="#">派系列</a>
@@ -93,22 +93,19 @@
   <!-- 首頁幻燈片end -->
 
   <!-- 關於我們start -->
-  <section id="aboutUsZone" class="p-2 p-md-4 d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-6 mb-3">
-          <h1 class="text-uncle-title">About Uncle醬</h1>
-          <p class="text-uncle-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
+  <section id="brandStory" class="h-100 px-5 d-flex flex-column align-items-center justify-content-center">
+    <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
+      <div class="row h-100 align-items-center">
+      <h1 class="col-12 text-center">品牌故事</h1>
+        <div class="col-12 col-lg-6 h-75 p-0">
+          <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">
+        </div>
+        <div class="col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center">
+          <p class="align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
             fugiat
             pariatur culpa similique, veniam iure adipisci delectus numquam, cumque modi fuga provident maxime! Eos
             recusandae ratione hic repellendus asperiores!</p>
           <button class="btn btn-outline-uncle"><a href="brandStory.php">read more</a></button>
-        </div>
-        <div class="col-12 col-lg-3 mb-3">
-          <img class="img-fluid" src="img/product/pie-lemon-one.jpg" alt="" title="">
-        </div>
-        <div class="col-12 col-lg-3 mb-3">
-          <img class="img-fluid" src="img/product/pie-taro-one.jpg" alt="" title="">
         </div>
       </div>
     </div>
@@ -117,17 +114,37 @@
 
   <!-- 全部產品start -->
   <!-- <h1 class="text-center my-4">所有商品</h1> -->
-  <div id="productSlide">
+  <div id="productSlide" class="h-100">
 
   </div>
   <!-- 全部產品end -->
+
+   <!-- 聯絡我們start -->
+  <section id="contactUs" class="h-100 px-5 d-flex flex-column align-items-center justify-content-center">
+    <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
+      <div class="row h-100 align-items-center">
+      <h1 class="col-12 text-center">聯絡資訊</h1>
+       <div class="col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center">
+          <p class="align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
+            fugiat
+            pariatur culpa similique, veniam iure adipisci delectus numquam, cumque modi fuga provident maxime! Eos
+            recusandae ratione hic repellendus asperiores!</p>
+          <button class="btn btn-outline-uncle"><a href="brandStory.php">read more</a></button>
+        </div>
+        <div class="col-12 col-lg-6 h-75 p-0">
+          <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 聯絡我們end -->
 
   <!-- footer start -->
   <footer id="footerZone" class="p-2 uncle-bg-dark">
     <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
       <h3><a class="h3" href="index.php">Uncle醬</a></h3>
       <div id=footerList>
-        <span class="mr-1"><a href="brandStory.php">品牌故事</a>｜</span>
+        <span class="mr-1"><a href="#brandStory">品牌故事</a>｜</span>
         <span class="mr-1"><a href="member.php">會員專區</a>｜</span>
         <span class="mr-1"><a href="">購物須知</a>｜</span>
         <span class="mr-1"><a href="contact.php">聯絡我們</a>｜</span>
@@ -145,12 +162,12 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/4.2.1/react-transition-group.min.js'></script>
-      <!-- slide from codepen -->
-      <script src="js/productSlide.js"></script>
+    <!-- slide from codepen -->
+    <script src="js/productSlide.js"></script>
     <!-- bootstrap -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  
+
 
 </body>
 

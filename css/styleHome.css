@@ -51,11 +51,10 @@ a:hover {
 
 /* navbar */
 
-
 .navbar-bg {
-    background:#C6BE80;
-     /* background: linear-gradient(180deg, #ffffff, #ffffffa9, #ffffff4f);  */
-    box-shadow: 0 0 10px 10px #ffffff4f; 
+    background: #C6BE80;
+    /* background: linear-gradient(180deg, #ffffff, #ffffffa9, #ffffff4f);  */
+    box-shadow: 0 0 10px 10px #ffffff4f;
 }
 
 .navbar-color a {
@@ -86,20 +85,23 @@ a:hover {
         object-fit: cover;
     }
 }
+
 @media (min-width: 576px) {
     .carousel-inner img {
         width: 100%;
-        height: 700px;
+        height: 950px;
         object-fit: cover;
     }
 }
-#slideZone .slide{
-opacity: 1;
+
+#slideZone .slide {
+    opacity: 1;
 }
 
 /* 按鈕 */
+
 .btn-outline-uncle {
-    border:2px solid #424C6D;
+    border: 2px solid #424C6D;
     border-radius: 30px;
 }
 
@@ -126,27 +128,23 @@ opacity: 1;
 
 /* 關於我們 */
 
-#aboutUsZone img {
-    box-shadow: 3px 3px 10px #695229b4;
-    border-radius: 5px;
+#brandStory .img, #contactUs .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 576px) {
-    #aboutUsZone{
+    #brandStory {
         height: auto;
     }
 }
 
 @media (min-width: 992px) {
-    #aboutUsZone{
+    #brandStory {
         height: 50%;
     }
 }
-
-
-/* 所有產品 */
-
-
 
 /* footer */
 
@@ -158,9 +156,11 @@ opacity: 1;
     color: #F8D487;
     text-decoration: none;
 }
+
 .copyright {
     letter-spacing: 3px;
 }
+
 @media (max-width: 576px) {
     #footerList a {
         font-size: 0.8rem;
@@ -171,4 +171,8 @@ opacity: 1;
     .copyright {
         font-size: 0.9rem;
     }
+}
+
+#brandStory h1 {
+    padding: 3% 0 !important;
 }

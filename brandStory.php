@@ -66,7 +66,6 @@
   </header>
   <!-- 導覽列 end -->
 
-
   <!-- 品牌故事 start -->
   <section id="brandStory">
     <div class="h-100 container d-flex align-items-center">
