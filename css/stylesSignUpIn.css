@@ -1,10 +1,10 @@
 html, body{
     height: 100%;
 }
-#contactUs{
+#signUp{
     padding-top: 2rem;
 }
-#contactUs .col-6{
+#signUp .col-6{
     padding: 0;
 }
 

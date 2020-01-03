@@ -33,7 +33,7 @@
           <a id="dropdown-about" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">關於我們</a>
           <div class="dropdown-menu">
             <a class="dropdown-item font-weight-normal" href="#brandStory">品牌故事</a>
-            <a class="dropdown-item font-weight-normal" href="contact.php">聯絡我們</a>
+            <a class="dropdown-item font-weight-normal" href="#contactUs">聯絡我們</a>
           </div>
         </li>
         <!-- logo start -->
@@ -44,7 +44,7 @@
         <li class="nav-item dropdown">
           <a id="dropdown-product" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">商品列表</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item font-weight-normal" href="#productSlide">所有商品</a>
+            <a class="dropdown-item font-weight-normal" href="product.php">所有商品</a>
             <a class="dropdown-item font-weight-normal" href="#">腰果醬</a>
             <a class="dropdown-item font-weight-normal" href="#">蛋糕系列</a>
             <a class="dropdown-item font-weight-normal" href="#">派系列</a>
@@ -56,12 +56,19 @@
         </li>
         <li id="home" class="nav-item"><a class="nav-link mr-4" href="member.php">會員專區</a></li>
       </ul>
-      <div id="join">
-        <a class="navbar-item" href="#">登入/註冊</a>
-      </div>
+      <ul id="join" class="navbar-nav login">
+        <li class="nav-item">
+          <a class="nav-link" href="#signin" data-toggle="modal">登入</a>
+        </li>
+        <span class="text-white font-weight-bolder" style="line-height: 40px;">｜</span>
+        <li class="nav-item">
+          <a class="nav-link" href="#signup" data-toggle="modal">註冊</a>
+        </li>
+      </ul>
     </div>
   </nav>
   <!-- 導覽列 end -->
+
 
   <!-- 首頁幻燈片start -->
   <section id="slideZone">
@@ -96,16 +103,15 @@
   <section id="brandStory" class="h-100 px-5 d-flex flex-column align-items-center justify-content-center">
     <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
       <div class="row h-100 align-items-center">
-      <h1 class="col-12 text-center">品牌故事</h1>
-        <div class="col-12 col-lg-6 h-75 p-0">
+        <h1 class="col-12 text-center">品牌故事</h1>
+        <div class="col-12 col-lg-6 h-75 ">
           <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">
         </div>
-        <div class="bg-main col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center">
-          <p class="align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
-            fugiat
-            pariatur culpa similique, veniam iure adipisci delectus numquam, cumque modi fuga provident maxime! Eos
-            recusandae ratione hic repellendus asperiores!</p>
-          <button class="btn btn-outline-uncle"><a href="brandStory.php">read more</a></button>
+        <div class="bg-main col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center navbar-bg">
+          <div class="text-center">
+            <img src="img/doubleQuotes.png" alt="" style="width: 15%">
+            <p class="align-self-center p-3">憑著著對美食與烘焙的熱情與堅持，秉持著少糖、少油、健康的理念，研發出不膩口奶油蛋糕及招牌腰果醬。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -119,19 +125,23 @@
   </div>
   <!-- 全部產品end -->
 
-   <!-- 聯絡我們start -->
+  <!-- 聯絡我們start -->
   <section id="contactUs" class="h-100 px-5 d-flex flex-column align-items-center justify-content-center">
     <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
       <div class="row h-100 align-items-center">
-      <h1 class="col-12 text-center">聯絡資訊</h1>
-       <div class="col-12 col-lg-6 h-75 d-flex flex-column justify-content-center">
-          <p>店家名稱：Uncle醬</p>
-          <p>聯絡電話：02-29811111</p>
-          <p>電子信箱：<a href="mailto:uncle_cashew@gmail.com">uncle_cashew@gmail.com</a></p>
-          <p>服務時間：週一～週六 10:00~18:00</p>
+        <h1 class="col-12 text-center">聯絡資訊</h1>
+        <div class="col-12 col-lg-6 h-75 d-flex flex-column justify-content-center navbar-bg">
+          <div class="p-3">
+            <ul>
+              <li>店家名稱：Uncle醬</li>
+              <li>聯絡電話：02-29811111</li>
+              <li>電子信箱：<a href="mailto:uncle_cashew@gmail.com">uncle_cashew@gmail.com</a></li>
+              <li>服務時間：週一～週六 10:00~18:00</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-12 col-lg-6 h-75 p-0">
-          <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">
+        <div class="col-12 col-lg-6 h-75">
+          <img class="img" src="img/product/pie-taro.jpg" alt="" title="">
         </div>
       </div>
     </div>
@@ -146,7 +156,7 @@
         <span class="mr-1"><a href="#brandStory">品牌故事</a>｜</span>
         <span class="mr-1"><a href="member.php">會員專區</a>｜</span>
         <span class="mr-1"><a href="">購物須知</a>｜</span>
-        <span class="mr-1"><a href="contact.php">聯絡我們</a>｜</span>
+        <span class="mr-1"><a href="#contactUs">聯絡我們</a>｜</span>
       </div>
       <span class="copyright">copyright©Nai Hui</span>
     </div>

@@ -38,8 +38,8 @@
           <li class="nav-item dropdown">
             <a id="dropdown-about" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">關於我們</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item font-weight-normal" href="brandStory.php">品牌故事</a>
-              <a class="dropdown-item font-weight-normal" href="contact.php">聯絡我們</a>
+              <a class="dropdown-item font-weight-normal" href="index.php#brandStory">品牌故事</a>
+              <a class="dropdown-item font-weight-normal" href="index.php#contactUs">聯絡我們</a>
             </div>
           </li>
           <!-- logo start -->
@@ -120,103 +120,6 @@
         <?php
         }
         ?>
-        <!-- <div class="col-6 col-md-4 text-center">
-          <div class="pro_img">
-            <div class="pro_more">
-              <a href="#">
-                <img class="img-fluid" src="img/more.png" alt="more">
-              </a>
-            </div>
-            <img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="巧克力蛋糕">
-          </div>
-          <div class="pro_info">
-            <a href="#">
-              <div class="pro_name">巧克力蛋糕</div>
-              <div class="pro_name_en">Chcolate cake</div>
-              <div class="pro_price">$280</div>
-            </a>
-          </div>
-          <div class="btn btn-outline-uncle addToCar" onmouseover="this.innerHTML = '加入購物車'" onmouseout="this.innerHTML = '+'">+
-          </div>
-        </div>
-        <div class="col-6 col-md-4 text-center">
-          <div class="pro_img">
-            <div class="pro_more">
-              <a href="#">
-                <img class="img-fluid" src="img/more.png" alt="more">
-              </a>
-            </div>
-            <img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="巧克力蛋糕">
-          </div>
-          <div class="pro_info">
-            <a href="#">
-              <div class="pro_name">巧克力蛋糕</div>
-              <div class="pro_name_en">Chcolate cake</div>
-              <div class="pro_price">$280</div>
-            </a>
-          </div>
-          <div class="btn btn-outline-uncle addToCar" onmouseover="this.innerHTML = '加入購物車'" onmouseout="this.innerHTML = '+'">+
-          </div>
-        </div>
-        <div class="col-6 col-md-4 text-center">
-          <div class="pro_img">
-            <div class="pro_more">
-              <a href="#">
-                <img class="img-fluid" src="img/more.png" alt="more">
-              </a>
-            </div>
-            <img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="巧克力蛋糕">
-          </div>
-          <div class="pro_info">
-            <a href="#">
-              <div class="pro_name">巧克力蛋糕</div>
-              <div class="pro_name_en">Chcolate cake</div>
-              <div class="pro_price">$280</div>
-            </a>
-          </div>
-          <div class="btn btn-outline-uncle addToCar" onmouseover="this.innerHTML = '加入購物車'" onmouseout="this.innerHTML = '+'">+
-          </div>
-        </div>
-        <div class="col-6 col-md-4 text-center">
-          <div class="pro_img">
-            <div class="pro_more">
-              <a href="#">
-                <img class="img-fluid" src="img/more.png" alt="more">
-              </a>
-            </div>
-            <img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="巧克力蛋糕">
-          </div>
-          <div class="pro_info">
-            <a href="#">
-              <div class="pro_name">巧克力蛋糕</div>
-              <div class="pro_name_en">Chcolate cake</div>
-              <div class="pro_price">$280</div>
-            </a>
-          </div>
-          <div class="btn btn-outline-uncle addToCar" onmouseover="this.innerHTML = '加入購物車'" onmouseout="this.innerHTML = '+'">+
-          </div>
-        </div>
-        <div class="col-6 col-md-4 text-center">
-          <div class="pro_img">
-            <div class="pro_more">
-              <a href="#">
-                <img class="img-fluid" src="img/more.png" alt="more">
-              </a>
-            </div>
-            <img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="巧克力蛋糕">
-          </div>
-          <div class="pro_info">
-            <a href="#">
-              <div class="pro_name">巧克力蛋糕</div>
-              <div class="pro_name_en">Chcolate cake</div>
-              <div class="pro_price">$280</div>
-            </a>
-          </div>
-          <div class="btn btn-outline-uncle addToCar" onmouseover="this.innerHTML = '加入購物車'" onmouseout="this.innerHTML = '+'">+
-          </div>
-        </div>
-      </div>
-    </div> -->
   </section>
   <!-- 產品陳列 end -->
 
@@ -226,10 +129,10 @@
     <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
       <h3><a class="h3" href="index.php">Uncle醬</a></h3>
       <div id=footerList>
-        <span class="mr-1"><a href="brandStory.php">品牌故事</a>｜</span>
+        <span class="mr-1"><a href="index.php#brandStory">品牌故事</a>｜</span>
         <span class="mr-1"><a href="member.php">會員專區</a>｜</span>
         <span class="mr-1"><a href="">購物須知</a>｜</span>
-        <span class="mr-1"><a href="contact.php">聯絡我們</a>｜</span>
+        <span class="mr-1"><a href="index.php#contactUs">聯絡我們</a>｜</span>
       </div>
       <span class="copyright">copyright©Nai Hui</span>
     </div>

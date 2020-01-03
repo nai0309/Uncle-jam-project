@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Inria+Serif|Noto+Sans+TC&display=swap" rel="stylesheet">
   <!-- custom css -->
   <link rel="stylesheet" href="css/styleHome.css" />
-  <link rel="stylesheet" href="css/styleContact.css" />
+  <link rel="stylesheet" href="css/stylesSignUp.css" />
 
 </head>
 
@@ -67,55 +67,82 @@
 
 
   <!-- 聯絡我們 start -->
-  <section id="contactUs">
+  <section id="signUp">
     <div class="container-fluid">
+
       <div class="row">
+
         <div class="col-6">
           <img class="img-fluid" src="img/product/pie-taro.jpg" alt="" title="">
         </div>
+
         <div class="col-6 p-5">
-          <h3>聯絡我們</h3>
-          <form>
+          <h3 class="pb-3">會員註冊</h3>
+          <form method="post">
             <div class="form-row">
               <div class="col-12 mb-3">
                 <label for="name">姓名</label>
-                <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required>
-             </div>
-              <div class="col-12 mb-3">
-                <label for="gender">性別</label>
-                <input type="checkbox" class="form-control" id="gender" placeholder="Last name" value="Otto" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="請輸入姓名" required>
               </div>
               <div class="col-12 mb-3">
-                <label for="validationServerUsername">Username</label>
+                <legend class="col-form-label">性別</legend>
+                <div class="form-row">
+                  <div class="form-check mr-3">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                    <label class="form-check-label" for="male">
+                      男
+                    </label>
+                  </div>
+                  <div class="form-check mr-3">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">
+                      女
+                    </label>
+                  </div>
+                  <div class="form-check mr-3">
+                    <input class="form-check-input" type="radio" name="gender" id="others" value="others">
+                    <label class="form-check-label" for="others">
+                      其它
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="birthday">生日</label>
+                <input type="date" class="form-control" id="birthday" name="birthday" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="email">電子信箱</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupPrepend3">@</span>
                   </div>
-                  <input type="text" class="form-control" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                  <input type="mail" class="form-control" id="email" required>
                 </div>
               </div>
               <div class="col-12 mb-3">
-                <label for="validationServer03">City</label>
-                <input type="text" class="form-control" id="validationServer03" placeholder="City" required>
+                <div class="form-row">
+                <div class="col-5">
+                <label for="password">密碼</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="請輸入密碼" required>
+                </div>
+                <div class="col-5">
+                <label for="passwordCheck">密碼確認</label>
+                <input type="password" class="form-control" id="passwordCheck" name="passwordCheck" placeholder="密碼確認" required>
+                </div>
+              </div>     
+            </div>
+            <div class="col-12 mb-3">
+                <label for="phone">電話</label>
+                <input type="tel"" class="form-control" id="phone" name="phone" placeholder="請輸入電話" required>
               </div>
               <div class="col-12 mb-3">
-                <label for="validationServer04">State</label>
-                <input type="text" class="form-control" id="validationServer04" placeholder="State" required>
-              </div>
-              <div class="col-12 mb-3">
-                <label for="validationServer05">Zip</label>
-                <input type="text" class="form-control" id="validationServer05" placeholder="Zip" required>
+                <label for="address">地址</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="請輸入地址" required>
               </div>
             </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
-                <label class="form-check-label" for="invalidCheck3">
-                  Agree to terms and conditions
-                </label>
-              </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit">送出</button>
+            <button class="btn btn-primary" type="reset">重置</button>
           </form>
         </div>
       </div>
@@ -128,10 +155,10 @@
     <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
       <h3><a class="h3" href="index.php">Uncle醬</a></h3>
       <div id=footerList>
-        <span class="mr-1"><a href="brandStory.php">品牌故事</a>｜</span>
+        <span class="mr-1"><a href="index.php#brandStory">品牌故事</a>｜</span>
         <span class="mr-1"><a href="member.php">會員專區</a>｜</span>
         <span class="mr-1"><a href="">購物須知</a>｜</span>
-        <span class="mr-1"><a href="contact.php">聯絡我們</a>｜</span>
+        <span class="mr-1"><a href="index.php#contactUs">聯絡我們</a>｜</span>
       </div>
       <span class="copyright">copyright©Nai Hui</span>
     </div>
