@@ -100,7 +100,7 @@
         <div class="col-12 col-lg-6 h-75 p-0">
           <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">
         </div>
-        <div class="col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center">
+        <div class="bg-main col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center">
           <p class="align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
             fugiat
             pariatur culpa similique, veniam iure adipisci delectus numquam, cumque modi fuga provident maxime! Eos
@@ -124,12 +124,11 @@
     <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
       <div class="row h-100 align-items-center">
       <h1 class="col-12 text-center">聯絡資訊</h1>
-       <div class="col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center">
-          <p class="align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore
-            fugiat
-            pariatur culpa similique, veniam iure adipisci delectus numquam, cumque modi fuga provident maxime! Eos
-            recusandae ratione hic repellendus asperiores!</p>
-          <button class="btn btn-outline-uncle"><a href="brandStory.php">read more</a></button>
+       <div class="col-12 col-lg-6 h-75 d-flex flex-column justify-content-center">
+          <p>店家名稱：Uncle醬</p>
+          <p>聯絡電話：02-29811111</p>
+          <p>電子信箱：<a href="mailto:uncle_cashew@gmail.com">uncle_cashew@gmail.com</a></p>
+          <p>服務時間：週一～週六 10:00~18:00</p>
         </div>
         <div class="col-12 col-lg-6 h-75 p-0">
           <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">

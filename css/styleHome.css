@@ -54,7 +54,7 @@ a:hover {
 .navbar-bg {
     background: #C6BE80;
     /* background: linear-gradient(180deg, #ffffff, #ffffffa9, #ffffff4f);  */
-    box-shadow: 0 0 10px 10px #ffffff4f;
+    /* box-shadow: 0 0 10px 10px #ffffff4f; */
 }
 
 .navbar-color a {
@@ -89,13 +89,17 @@ a:hover {
 @media (min-width: 576px) {
     .carousel-inner img {
         width: 100%;
-        height: 950px;
+        height: 100%;
         object-fit: cover;
     }
 }
 
 #slideZone .slide {
     opacity: 1;
+}
+
+.carousel-indicators {
+    bottom:30px;
 }
 
 /* 按鈕 */
@@ -144,6 +148,14 @@ a:hover {
     #brandStory {
         height: 50%;
     }
+}
+
+/* 聯絡我們 */
+#contactUs {
+    font-size:1.2rem;
+}
+#contactUs a{
+    color:black;
 }
 
 /* footer */
