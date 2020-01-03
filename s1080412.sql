@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- 主機： localhost
--- 產生時間： 2020 年 01 月 02 日 02:28
--- 伺服器版本： 10.4.8-MariaDB
--- PHP 版本： 7.2.23
+-- 主機： 127.0.0.1
+-- 產生時間： 
+-- 伺服器版本： 10.4.6-MariaDB
+-- PHP 版本： 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,13 +30,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `member` (
   `id` int(10) UNSIGNED NOT NULL,
-  `account_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `member_name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birthday` date NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `birthday` date NOT NULL
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
