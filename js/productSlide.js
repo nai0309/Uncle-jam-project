@@ -1,42 +1,55 @@
 const slideData = [
   {
     index: 0,
-    headline: 'GO Get Pie',
+    headline: '蛋糕系列',
     button: 'Order now',
     src: './img/product/pie-lemon-slide.jpg',
-    link: '#'
+    link: 'product.php?type=蛋糕系列&select=productCake'
   },
 
   {
     index: 1,
-    headline: 'GO Get Cashew Butter',
+    headline: '腰果醬',
     button: 'Order now',
     src: './img/product/pie-taro-slide.jpg',
-    link: '#'
+    link: 'product.php?type=腰果醬&select=productCashew'
   },
 
   {
     index: 2,
-    headline: 'GO Get Cake',
+    headline: '派系列',
     button: 'Order now',
     src: './img/product/cake-carrot-slide.jpg',
-    link: '#'
+    link: 'product.php?type=派系列&select=productPie'
   },
 
   {
     index: 3,
-    headline: 'GO Get Cookies',
+    headline: '歐蕾卷',
     button: 'Order now',
     src: './img/product/cookies.jpg',
-    link: '#'
+    link: 'product.php?type=歐蕾卷&select=productCakeroll'
   },
-
   {
     index: 4,
-    headline: 'GO Get Oatcake',
+    headline: '燕麥蛋糕',
+    button: 'Order now',
+    src: './img/product/cookies.jpg',
+    link: 'product.php?type=燕麥蛋糕&select=productOat'
+  },
+  {
+    index: 5,
+    headline: '手工餅乾',
+    button: 'Order now',
+    src: './img/product/cookies.jpg',
+    link: 'product.php?type=手工餅乾&select=productCookies'
+  },
+  {
+    index: 6,
+    headline: '牛軋糖',
     button: 'Order now',
     src: './img/product/oatcake-1.jpg',
-    link: '#'
+    link: 'product.php?type=牛軋糖&select=productCandy'
   }];
 
 

@@ -1,0 +1,54 @@
+/* body */
+
+body {
+    background-color: white;
+}
+
+/* serve list */
+
+#serveList {
+    height: 150px;
+}
+
+#serveList button {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+
+}
+
+@media (max-width: 576px) {
+    #serveList {
+        height: 2rem;
+    }
+    
+}
+
+
+/* 訂購紀錄 */
+
+
+
+.btn, .btn-outline-uncle{
+    border-radius: 20px;
+    width: 100px;
+}
+
+.btn:visited {
+    border: 0;
+}
+
+.btn:focus{
+    box-shadow: 0;
+}
+
+.active{
+    color: #fff;
+    background-color: #F8D487;
+    border-color: #F8D487;
+    cursor: pointer;
+}
+.active:focus{
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

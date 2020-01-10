@@ -2,73 +2,18 @@
 <html lang="zh-tw">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Uncle醬-Home</title>
-
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="css/fontawesome.css">
-  <!-- slide from codepen -->
-  <link rel="stylesheet" href="css/productSlide.css">
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="css/bootstrap.css" />
-  <!-- google font -->
-  <link href="https://fonts.googleapis.com/css?family=Inria+Serif|Noto+Sans+TC&display=swap" rel="stylesheet">
-  <!-- custom css -->
-  <link rel="stylesheet" href="css/styleHome.css" />
+<?php
+include("header.php");
+?>
+ <link rel="stylesheet" href="css/productSlide.css" />
+  <title>Uncle醬-首頁</title>
 
 </head>
 
 <body>
   <!-- 導覽列 start -->
-  <nav class="navbar navbar-expand-lg navbar-color navbar-bg fixed-top">
-    <a class="navbar-brand d-lg-none d-sm-block" href="#">LOGO</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbar">
-
-      <ul class="navbar-nav m-auto">
-        <li id="home" class="nav-item"><a class="nav-link mr-4" href="#">首頁</a></li>
-        <li class="nav-item dropdown">
-          <a id="dropdown-about" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">關於我們</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item font-weight-normal" href="#brandStory">品牌故事</a>
-            <a class="dropdown-item font-weight-normal" href="#contactUs">聯絡我們</a>
-          </div>
-        </li>
-        <!-- logo start -->
-        <li class="nav-brand">
-          <a class="nav-link d-none d-lg-block mr-4" href="#">Uncle醬</a>
-        </li>
-        <!-- logo end -->
-        <li class="nav-item dropdown">
-          <a id="dropdown-product" class="nav-link mr-4 dropdown-toggle" href="#" data-toggle="dropdown">商品列表</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item font-weight-normal" href="product.php">所有商品</a>
-            <a class="dropdown-item font-weight-normal" href="#">腰果醬</a>
-            <a class="dropdown-item font-weight-normal" href="#">蛋糕系列</a>
-            <a class="dropdown-item font-weight-normal" href="#">派系列</a>
-            <a class="dropdown-item font-weight-normal" href="#">歐蕾卷</a>
-            <a class="dropdown-item font-weight-normal" href="#">燕麥蛋糕</a>
-            <a class="dropdown-item font-weight-normal" href="#">手工餅乾</a>
-            <a class="dropdown-item font-weight-normal" href="#">牛軋糖</a>
-          </div>
-        </li>
-        <li id="home" class="nav-item"><a class="nav-link mr-4" href="member.php">會員專區</a></li>
-      </ul>
-      <ul id="join" class="navbar-nav login">
-        <li class="nav-item">
-          <a class="nav-link" href="#signin" data-toggle="modal">登入</a>
-        </li>
-        <span class="text-white font-weight-bolder" style="line-height: 40px;">｜</span>
-        <li class="nav-item">
-          <a class="nav-link" href="#signup" data-toggle="modal">註冊</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <?php include("navbar.php") ?>
   <!-- 導覽列 end -->
-
 
   <!-- 首頁幻燈片start -->
   <section id="slideZone">
@@ -99,18 +44,23 @@
   </section>
   <!-- 首頁幻燈片end -->
 
+  <!-- 全部產品start -->
+  <div id="productSlide" class="mb-2">
+
+  </div>
+  <!-- 全部產品end -->
+
   <!-- 關於我們start -->
-  <section id="brandStory" class="h-100 px-5 d-flex flex-column align-items-center justify-content-center">
-    <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
-      <div class="row h-100 align-items-center">
-        <h1 class="col-12 text-center">品牌故事</h1>
-        <div class="col-12 col-lg-6 h-75 ">
-          <img class="img" src="img/product/pie-lemon-one.jpg" alt="" title="">
+  <section id="brandStory" class="mb-2 px-5 d-flex flex-column align-items-center justify-content-center">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="row align-items-center">
+        <h1 class="col-12 text-center text-uncle-title">品牌故事</h1>
+        <div class="d-none d-sm-block col-12 col-sm-6 h-75">
+          <img class="img-fluid" src="img/product/pie-lemon-one.jpg" alt="" title="">
         </div>
-        <div class="bg-main col-12 col-lg-6 h-75 d-flex align-items-center flex-column justify-content-center navbar-bg">
+        <div class="bg-main col-12 col-sm-6 h-75 d-flex align-items-center flex-column justify-content-center text-uncle-dark">
           <div class="text-center">
-            <img src="img/doubleQuotes.png" alt="" style="width: 15%">
-            <p class="align-self-center p-3">憑著著對美食與烘焙的熱情與堅持，秉持著少糖、少油、健康的理念，研發出不膩口奶油蛋糕及招牌腰果醬。</p>
+            <p class="align-self-center text-uncle-dark">憑著著對美食與烘焙的熱情與堅持，秉持著少糖、少油、健康的理念，研發出不膩口奶油蛋糕及招牌腰果醬。</p>
           </div>
         </div>
       </div>
@@ -118,64 +68,69 @@
   </section>
   <!-- 關於我們end -->
 
-  <!-- 全部產品start -->
-  <!-- <h1 class="text-center my-4">所有商品</h1> -->
-  <div id="productSlide" class="h-100">
-
-  </div>
-  <!-- 全部產品end -->
-
-  <!-- 聯絡我們start -->
-  <section id="contactUs" class="h-100 px-5 d-flex flex-column align-items-center justify-content-center">
-    <div class="container h-75 d-flex flex-column justify-content-center align-items-center">
-      <div class="row h-100 align-items-center">
-        <h1 class="col-12 text-center">聯絡資訊</h1>
-        <div class="col-12 col-lg-6 h-75 d-flex flex-column justify-content-center navbar-bg">
-          <div class="p-3">
-            <ul>
-              <li>店家名稱：Uncle醬</li>
-              <li>聯絡電話：02-29811111</li>
-              <li>電子信箱：<a href="mailto:uncle_cashew@gmail.com">uncle_cashew@gmail.com</a></li>
-              <li>服務時間：週一～週六 10:00~18:00</li>
+  <!-- 購物須知start -->
+  <section id="orderNote" class="mb-2 px-5 d-flex flex-column align-items-center justify-content-center">
+    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+      <div class="row h-75 align-items-center">
+        <h1 class="col-12 text-center text-uncle-title">購物須知</h1>
+        <div class="col-12 col-lg-6 h-75 d-flex flex-column justify-content-center navbar-bg align-items-center text-uncle-dark">
+          <div>
+            <b class="text-dark">宅配貨到付款：</b><br>
+            需加收$30手續費，金額超過一萬元(含)以上不適用<br>
+            <b class="text-dark">ATM轉帳資訊：</b><br>
+            匯款銀行名稱：第二銀你好分行<br>
+            匯款銀行代號：000<br>
+            帳號：000-00-0000000<br>
+            戶名：方芳芳<br>
+            付款完成後，請提供帳號後五碼<br>
+            <b class="text-dark">運費：</b><br>
+            未滿2500元須加收$150低溫宅配運費。<br>
+            滿2500元以上(免運費)，外島暫不配送<br>
+            <b class="text-dark">退換貨：</b><br>
+            基於食品衛生安全考量，商品購買後一旦離櫃恕不接受退換貨(商品如有瑕疵，則不在此限)。
             </ul>
           </div>
         </div>
-        <div class="col-12 col-lg-6 h-75">
-          <img class="img" src="img/product/pie-taro.jpg" alt="" title="">
+        <div class="d-none d-sm-block col-12 col-lg-6 h-75">
+          <img class="img" src="img/product/cake-carrot-slide.jpg" alt="" title="">
         </div>
       </div>
     </div>
   </section>
-  <!-- 聯絡我們end -->
+  <!-- 購物須知end -->
 
   <!-- footer start -->
-  <footer id="footerZone" class="p-2 uncle-bg-dark">
-    <div class="text-uncle-light d-flex flex-column align-items-center justify-content-between">
-      <h3><a class="h3" href="index.php">Uncle醬</a></h3>
-      <div id=footerList>
-        <span class="mr-1"><a href="#brandStory">品牌故事</a>｜</span>
-        <span class="mr-1"><a href="member.php">會員專區</a>｜</span>
-        <span class="mr-1"><a href="">購物須知</a>｜</span>
-        <span class="mr-1"><a href="#contactUs">聯絡我們</a>｜</span>
-      </div>
-      <span class="copyright">copyright©Nai Hui</span>
-    </div>
-    <!-- footer end -->
+  <?php include("footer.php") ?>
+  <!-- footer end -->
 
 
-    <!-- Jqery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Jqery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!--slide from codepen partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/4.2.1/react-transition-group.min.js'></script>
+  <!-- slide from codepen -->
+  <script src="js/productSlide.js"></script>
 
-
-    <!--slide from codepen partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/4.2.1/react-transition-group.min.js'></script>
-    <!-- slide from codepen -->
-    <script src="js/productSlide.js"></script>
-    <!-- bootstrap -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+  <script>
+    // 表單驗證js
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 
 
 </body>

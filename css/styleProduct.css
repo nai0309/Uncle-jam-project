@@ -1,17 +1,3 @@
-/* body */
-
-body {
-    background-color: white;
-}
-
-/* banner */
-
-#productBanner img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
 /* product list */
 
 #productList {
@@ -31,7 +17,6 @@ body {
     }
     
 }
-
 
 /* 產品陳列 */
 
@@ -81,6 +66,7 @@ body {
 .pro_name_en {
     font-family: 'Inria Serif', serif !important;
     margin: 5px 0;
+    text-transform: uppercase;
 }
 
 .pro_price {
@@ -94,4 +80,9 @@ body {
 
 .addToCar{
     margin-bottom: 2rem;
+}
+
+/* 商品詳情頁 */
+#productDetail .form-control{
+    width: auto !important;
 }
