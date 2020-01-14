@@ -36,10 +36,8 @@
   <section id="productBanner">
     <div class="banImg">
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4">手工甜點</h1>
-        <p class="lead">健康手工，少油、少糖、少鹽</p>
       </div>
-      <img src="img/product/cake-tiramisu.jpg" alt="">
+      <img src="img/banner_product.jpg" alt="banner商品頁">
     </div>
   </section>
   <!-- banner end -->
@@ -66,7 +64,7 @@
                     if ($product['img'] != null) {
                       echo $product['img'];
                     } else {
-                      echo '<img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="請補圖" title="'.$product['name_zh'].'">';
+                      echo '<img class="img-fluid" src="img/product/proimg_default.JPG" alt="請補圖" title="'.$product['name_zh'].'">';
                     }
                     ?>
             </div>

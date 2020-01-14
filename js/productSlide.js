@@ -3,7 +3,7 @@ const slideData = [
     index: 0,
     headline: '蛋糕系列',
     button: 'Order now',
-    src: './img/product/pie-lemon-slide.jpg',
+    src: './img/selectlist_cake.jpg',
     link: 'product.php?type=蛋糕系列&select=productCake'
   },
 
@@ -11,7 +11,7 @@ const slideData = [
     index: 1,
     headline: '醬系列',
     button: 'Order now',
-    src: './img/product/pie-taro-slide.jpg',
+    src: './img/selectlist_jam.jpg',
     link: 'product.php?type=醬系列&select=productCashew'
   },
 
@@ -19,7 +19,7 @@ const slideData = [
     index: 2,
     headline: '派系列',
     button: 'Order now',
-    src: './img/product/cake-carrot-slide.jpg',
+    src: './img/selectlist_pie.jpg',
     link: 'product.php?type=派系列&select=productPie'
   },
 
@@ -27,28 +27,28 @@ const slideData = [
     index: 3,
     headline: '歐蕾卷',
     button: 'Order now',
-    src: './img/product/cookies.jpg',
+    src: './img/selectlist_cakeroll.jpg',
     link: 'product.php?type=歐蕾卷&select=productCakeroll'
   },
   {
     index: 4,
     headline: '燕麥蛋糕',
     button: 'Order now',
-    src: './img/product/cookies.jpg',
+    src: './img/selectlist_oatcake.jpg',
     link: 'product.php?type=燕麥蛋糕&select=productOat'
   },
   {
     index: 5,
     headline: '手工餅乾',
     button: 'Order now',
-    src: './img/product/cookies.jpg',
+    src: './img/selectlist_cookies.jpg',
     link: 'product.php?type=手工餅乾&select=productCookies'
   },
   {
     index: 6,
     headline: '牛軋糖',
     button: 'Order now',
-    src: './img/product/oatcake-1.jpg',
+    src: './img/selectlist_candy.jpg',
     link: 'product.php?type=牛軋糖&select=productCandy'
   }];
 

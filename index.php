@@ -25,13 +25,13 @@ include("header.php");
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="" src="img/product/cake-carrot-slide.jpg" alt="紅蘿蔔蛋糕" title="紅蘿蔔蛋糕">
+          <img src="img/slide_01.jpg" alt="輪播01" title="輪播01">
         </div>
         <div class="carousel-item">
-          <img class="" src="img/product/pie-lemon-slide.jpg" alt="檸檬派" title="檸檬派">
+          <img src="img/slide_02.jpg" alt="輪播02" title="輪播02">
         </div>
         <div class="carousel-item">
-          <img class="" src="img/product/pie-taro-slide.jpg" alt="芋泥派" title="芋泥派">
+          <img src="img/slide_03.jpg" alt="輪播03" title="輪播03">
         </div>
       </div>
       <a href="#slide" class="carousel-control-prev" data-slide="prev">
@@ -56,7 +56,7 @@ include("header.php");
       <div class="row align-items-center">
         <h1 class="col-12 text-center text-uncle-title">品牌故事</h1>
         <div class="d-none d-sm-block col-12 col-sm-6 h-75">
-          <img class="img-fluid" src="img/product/pie-lemon-one.jpg" alt="" title="">
+          <img class="img" src="img/indeximg_品牌故事.jpg" alt="品牌故事" title="品牌故事">
         </div>
         <div class="bg-main col-12 col-sm-6 h-75 d-flex align-items-center flex-column justify-content-center text-uncle-dark">
           <div class="text-center">
@@ -92,7 +92,7 @@ include("header.php");
           </div>
         </div>
         <div class="d-none d-sm-block col-12 col-lg-6 h-75">
-          <img class="img" src="img/product/cake-carrot-slide.jpg" alt="" title="">
+          <img class="img" src="img/indeximg_購物須知.jpg" alt="購物須知" title="購物須知">
         </div>
       </div>
     </div>

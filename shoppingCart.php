@@ -16,8 +16,20 @@
   }
 
   // 判斷購物車是否有商品所顯示的畫面
-  if (isset($_SESSION["shoppingcart"])) {
+  if (!empty($_SESSION["shoppingcart"])) {
     $addCartPros = $_SESSION["shoppingcart"];
+    if ($addCartPros != null) {
+      $column_text = '(';
+      foreach ($addCartPros as $key => $data) {
+        $column_text .=  $key . ',';
+      }
+      $column_text = substr($column_text, 0, -1) . ')';
+    } else {
+      $column_text = '()';
+    }
+    $sql = $db->prepare("SELECT * FROM product WHERE id IN " . $column_text);
+    $sql->execute();
+    $products = $sql->fetchAll();
   } else {
     $addCartPros = [];
   }
@@ -29,23 +41,6 @@
   } else {
     $proSingleNote = [];
   }
-
-  if ($addCartPros != null) {
-    $column_text = '(';
-    foreach ($addCartPros as $key => $data) {
-      $column_text .=  $key . ',';
-    }
-    $column_text = substr($column_text, 0, -1) . ')';
-  } else {
-    $column_text = '()';
-  }
-
-  // echo json_encode($column_text);
-  // echo "<hr>";
-
-  $sql = $db->prepare("SELECT * FROM product WHERE id IN " . $column_text);
-  $sql->execute();
-  $products = $sql->fetchAll();
 
   // echo json_encode($sql);
   // return;
@@ -65,9 +60,8 @@
   <section id="productBanner">
     <div class="banImg">
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4">購物車</h1>
       </div>
-      <img calss="img-fluid" src="img/product/cake-tiramisu.jpg" alt="">
+      <img calss="img-fluid" src="img/banner_shoppingcart.jpg" alt="購物車banner" title="購物車banner">
     </div>
   </section>
   <!-- banner end -->
@@ -125,7 +119,7 @@
                     if ($product['img'] != null) {
                       echo $product['img'];
                     } else {
-                      echo '<img class="img-fluid align-self-center my-3 mx-5" src="img/product/cake-chcolate.jpg" alt="請補圖" title="' . $product['name_zh'] . '">';
+                      echo '<img class="img-fluid" src="img/product/proimg_default.JPG" alt="請補圖" title="'.$product['name_zh'].'">';
                     }
                     ?>
                   </td>

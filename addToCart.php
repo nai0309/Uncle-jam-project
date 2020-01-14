@@ -71,13 +71,14 @@ switch ($_GET['do']) {
 
         // 訂單確認event 3
         if (isset($_POST['order_confirm'])) {
+            // print_r($_POST);
+            // echo "<hr>";
             $data_check = false;
             // enent 3-1 新增 order_detail
             $insert_data_detail = [];
-            $field_detail = ["table_name", "order_num", "product_num", "count", "ordernote"];
+            $field_detail = ["order_num", "product_num", "count", "ordernote"];
             for ($i = 0; $i < count($_POST['product_num']); $i++) {
                 $insert_data_detail = [
-                    'table_name' => 'order_detail',
                     'order_num' => $_POST['order_num'],
                     'product_num' => $_POST['product_num'][$i],
                     'count' => (int) $_POST['qty'][$i],
@@ -86,7 +87,7 @@ switch ($_GET['do']) {
 
                 $insert_id = insert("order_detail", $field_detail, $insert_data_detail);
             }
-
+            // return;
             // enent 3-2 新增 order_info
             $insert_data = [];
             $select_data = [];

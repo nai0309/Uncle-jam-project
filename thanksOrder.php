@@ -29,9 +29,8 @@
   <section id="productBanner">
     <div class="banImg">
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4">購物車</h1>
       </div>
-      <img calss="img-fluid" src="img/product/cake-tiramisu.jpg" alt="">
+      <img calss="img-fluid" src="img/banner_thanksorder.jpg" alt="感謝訂購banner" title="感謝訂購banner">
     </div>
   </section>
   <!-- banner end -->

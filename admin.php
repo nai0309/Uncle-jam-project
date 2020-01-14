@@ -32,9 +32,8 @@
   <section id="productBanner">
     <div class="banImg">
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4">後台管理</h1>
       </div>
-      <img src="img/product/cake-tiramisu.jpg" alt="">
+      <img src="img/banner_backend.jpg" alt="後台banner" title="後台banner">
     </div>
   </section>
   <!-- banner end -->
@@ -134,7 +133,7 @@
                     if ($product['img'] != null) {
                       echo $product['img'];
                     } else {
-                      echo '<img src="img/product/cake-chcolate.jpg" alt="請補圖" title="'.$product['name_zh'].'">';
+                      echo '<img src="img/product/proimg_default.JPG" alt="請補圖" title="'.$product['name_zh'].'">';
                     }
                     ?>
                   </div>

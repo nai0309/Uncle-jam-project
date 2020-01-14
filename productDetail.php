@@ -39,10 +39,8 @@
   <section id="productBanner">
     <div class="banImg">
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4">手工甜點</h1>
-        <p class="lead">健康手工，少油、少糖、少鹽</p>
       </div>
-      <img src="img/product/cake-tiramisu.jpg" alt="">
+      <img src="img/banner_product.jpg" alt="商品banner" title="商品banner">
     </div>
   </section>
   <!-- banner end -->
@@ -62,7 +60,7 @@
           if ($product['img'] != null) {
             echo $product['img'];
           } else {
-            echo '<img src="img/product/cake-chcolate.jpg" alt="請補圖" title="' . $product['name_zh'] . '">';
+            echo '<img class="img-fluid" src="img/product/proimg_default.JPG" alt="請補圖" title="'.$product['name_zh'].'">';
           }
           ?>
           <!-- <img src="<?= ($product['img'] != null) ? $product['img'] : 'img/product/cake-chcolate.jpg'; ?>" class="align-self-center mr-3" alt="..." width="40%"> -->
@@ -84,10 +82,7 @@
               <p>
                 <button id="addCartBtn" class="btn btn-outline-uncle btn-readmore" type="submit" name="submitbtn" onmouseover="this.innerHTML = '加入購物車'" onmouseout="this.innerHTML = '+'" style="width:110px">+</button>
               </p>
-              <p class="">
-                商品詳情：<br>
-                <?= $product['description'] ?>
-              </p>
+              <pre><b class="h6">商品詳情：</b><p><?= $product['description'] ?></p></pre>
             </div>
           </form>
         </div>

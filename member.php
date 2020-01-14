@@ -35,7 +35,7 @@
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
         <h1 class="display-4">會員專區</h1>
       </div>
-      <img src="img/product/cake-tiramisu.jpg" alt="">
+      <img src="img/banner_member.jpg" alt="會員banner" title="會員banner">
     </div>
   </section>
   <!-- banner end -->
@@ -122,7 +122,7 @@
               <td><?= $order_info["address"] ?></td>
               <td><?= $order_info["ordertime"] ?></td>
               <td><?= $order_info["shipping_status"] ?></td>
-              <td><?= $order_info["total_amount"] ?></td>
+              <td class="en-font">$ <?= $order_info["total_amount"] ?></td>
               <td><textarea cols="20" rows="2"><?= $order_info["note"] ?></textarea></td>
               <td>
                 <a class="btn-readmore" data-toggle="modal" data-target="#order_detail<?= $order_info["order_num"] ?>">查詢詳情</a>
