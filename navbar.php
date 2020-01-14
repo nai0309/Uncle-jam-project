@@ -18,7 +18,7 @@ $member_type = $_SESSION['login']['logintype'];
         <div class="dropdown-menu">
           <a class="dropdown-item font-weight-normal" href="product.php">所有商品</a>
           <a class="dropdown-item font-weight-normal" href="product.php?type=蛋糕系列&select=productCake">蛋糕系列</a>
-          <a class="dropdown-item font-weight-normal" href="product.php?type=腰果醬&select=productCashew">腰果醬</a>
+          <a class="dropdown-item font-weight-normal" href="product.php?type=醬系列&select=productCashew">醬系列</a>
           <a class="dropdown-item font-weight-normal" href="product.php?type=派系列&select=productPie">派系列</a>
           <a class="dropdown-item font-weight-normal" href="product.php?type=歐蕾卷&select=productCakeroll">歐蕾卷</a>
           <a class="dropdown-item font-weight-normal" href="product.php?type=燕麥蛋糕&select=productOat">燕麥蛋糕</a>

@@ -2,23 +2,20 @@
 <html lang="zh-tw">
 
 <head>
-<?php
-include("header.php");
-if ($_SESSION['login']["email"] != "admin") {
-  header("location:index.php");
-}
+  <?php
+  include("header.php");
+  if ($_SESSION['login']["email"] != "admin") {
+    header("location:index.php");
+  }
 
-if(isset($_SESSION['update_type']) && $_SESSION['update_type'] == 1){
-  echo '<script>alert("修改成功！")</script>';
-  $_SESSION['update_type'] = 0;
-}
-$select_data = [];
-$field = [];
-$products = select('product', $field, $select_data);
-$members = select('member', $field, $select_data);
-$orders = select('order_info', $field, $select_data);
-$order_details = select('order_detail', $field, $select_data);
-?>
+  $select_data = [];
+  $field = [];
+  $product_types = select('product_type', $field, $select_data);
+  $products = select('product', $field, $select_data);
+  $members = select('member', $field, $select_data);
+  $order_infos = select('order_info', $field, $select_data);
+  $order_details = select('order_detail', $field, $select_data);
+  ?>
 
   <title>Uncle醬-後台管理</title>
 
@@ -130,9 +127,36 @@ $order_details = select('order_detail', $field, $select_data);
             <form action="api.php?do=productMdy" method="post">
               <tr>
                 <td scope="row"><input type="hidden" name="id" value="<?= $product['id'] ?>"><?= $i += 1 ?></td>
-                <td><img class="img-fluid" src="<?= ($product['img'] != null) ? $product['img'] : 'img/product/cake-chcolate.jpg'; ?>" alt="巧克力蛋糕" width="100px"></td>
+                <td>
+                  <input type="file" class="form-control-file mb-1" id="updateImg<?= $product['id'] ?>" name="updateImg" onchange="encodeUpdate('<?= $product['id'] ?>');">
+                  <div id="updateImgshow<?= $product['id'] ?>" class="uploadImg">
+                    <?php
+                    if ($product['img'] != null) {
+                      echo $product['img'];
+                    } else {
+                      echo '<img src="img/product/cake-chcolate.jpg" alt="請補圖" title="'.$product['name_zh'].'">';
+                    }
+                    ?>
+                  </div>
+                  <div>
+                    <textarea style="display:none" class="form-control" id="updateImgtxt<?= $product['id'] ?>" name="updateImgtxt"><?= $product['img'] ?></textarea>
+                  </div>
+                </td>
                 <td><input class="form-control form-control-sm" type="text" name="product_num" value="<?= $product['product_num'] ?>"></td>
-                <td><input class="form-control form-control-sm" type="text" name="type" value="<?= $product['type'] ?>"></td>
+
+                <td>
+                  <select class="form-control form-control-sm" type="text" id="addType" name="type">
+                    <?php
+                    foreach ($product_types as $product_type) {
+                    ?>
+                      <option value="<?= $product_type["type"] ?>" <?= ($product['type'] == $product_type["type"]) ? "selected" : ""; ?>>
+                        <?= $product_type["type"] ?>
+                      </option>
+                    <?php
+                    }
+                    ?>
+                  </select>
+                </td>
                 <td><input class="form-control form-control-sm" type="text" name="name_zh" value="<?= $product['name_zh'] ?>"></td>
                 <td><input class="form-control form-control-sm" type="text" name="name_en" value="<?= $product['name_en'] ?>"></td>
                 <td><input class="form-control form-control-sm" type="text" name="price" value="<?= $product['price'] ?>"></td>
@@ -169,13 +193,13 @@ $order_details = select('order_detail', $field, $select_data);
                   <div class="form-group col-4">
                     <label class="text-secondary font-weight-bolder" for="addType">品項</label>
                     <select class="form-control form-control-sm" type="text" id="addType" name="addType">
-                      <option value="蛋糕系列" selected>蛋糕系列</option>
-                      <option value="腰果醬">腰果醬</option>
-                      <option value="派系列">派系列</option>
-                      <option value="歐蕾卷">歐蕾卷</option>
-                      <option value="燕麥蛋糕">燕麥蛋糕</option>
-                      <option value="手工餅乾">手工餅乾</option>
-                      <option value="牛軋糖">牛軋糖</option>
+                      <?php
+                      foreach ($product_types as $product_type) {
+                      ?>
+                        <option value="<?= $product_type["type"] ?>"><?= $product_type["type"] ?></option>
+                      <?php
+                      }
+                      ?>
                     </select>
                   </div>
                   <div class="form-group col-4">
@@ -203,7 +227,12 @@ $order_details = select('order_detail', $field, $select_data);
                 </div>
                 <div class="form-group">
                   <label class="text-secondary font-weight-bolder" for="addImg">圖片</label>
-                  <input type="file" class="form-control-file btn btn-outline-uncle" id="addImg" name="addImg" style="width:auto;border:none;display:block">
+                  <input type="file" class="form-control-file" id="addImg" name="addImg" onchange="encodeAdd();">
+                  <div id="imgshow">
+                  </div>
+                  <div>
+                    <textarea style="display:none" class="form-control" id="txt" name="addImgtxt"></textarea>
+                  </div>
                 </div>
               </div>
               <div class="modal-footer">
@@ -223,92 +252,102 @@ $order_details = select('order_detail', $field, $select_data);
   <!-- 訂單管理start -->
   <section id="orderManagement" class="mb-5">
     <div class="container-fluid table-responsive">
-      <form action="">
-        <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">訂單編號</th>
-              <th scope="col">收件者</th>
-              <th scope="col">電話</th>
-              <th scope="col">信箱</th>
-              <th scope="col">地址</th>
-              <th scope="col">訂購日期</th>
-              <th scope="col">出貨狀態</th>
-              <th scope="col">消費金額</th>
-              <th scope="col">訂單詳情</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            foreach ($orders as $order) {
-            ?>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">訂單編號</th>
+            <th scope="col">收件者</th>
+            <th scope="col">電話</th>
+            <th scope="col">信箱</th>
+            <th scope="col">地址</th>
+            <th scope="col">訂購日期</th>
+            <th scope="col">出貨狀態</th>
+            <th scope="col">消費金額</th>
+            <th scope="col">備註</th>
+            <th scope="col">訂單詳情</th>
+            <th scope="col">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($order_infos as $order_info) {
+          ?>
+            <form action="api.php?do=order_infoMdy" method="post">
               <tr>
-                <input type="hidden" value="<?= $order["id"] ?>">
-                <td scope="row"><?= $order["order_num"] ?></td>
-                <td><?= $order["order_name"] ?></td>
-                <td><?= $order["phone"] ?></td>
-                <td><?= $order["email"] ?></td>
-                <td><?= $order["address"] ?></td>
-                <td><?= $order["ordertime"] ?></td>
+                <input type="hidden" name="id" value="<?= $order_info["id"] ?>">
+                <td scope="row"><?= $order_info["order_num"] ?></td>
+                <td><?= $order_info["order_name"] ?></td>
+                <td><?= $order_info["phone"] ?></td>
+                <td><?= $order_info["email"] ?></td>
+                <td><?= $order_info["address"] ?></td>
+                <td><?= $order_info["ordertime"] ?></td>
                 <td>
-                  <select class="form-control form-control-sm">
-                    <option selected><?= $order["shipping_status"] ?></option>
-                    <option><?= $order["shipping_status"] == "已出貨" ? "待出貨" : "已出貨" ?></option>
+                  <select class="form-control form-control-sm" name="shipping_status">
+                    <option selected><?= $order_info["shipping_status"] ?></option>
+                    <option><?= $order_info["shipping_status"] == "已出貨" ? "待出貨" : "已出貨" ?></option>
                   </select>
                 </td>
-                <td>＄<?= $order["total_amount"] ?></td>
+                <td>＄<?= $order_info["total_amount"] ?></td>
+                <td><textarea cols="20" rows="2" name="order_infoNote"><?= $order_info["note"] ?></textarea></td>
                 <td>
-                  <a type="button" class="btn-readmore" data-toggle="modal" data-target="#orderDetail<?= $order["id"] ?>">查詢詳情</a>
+                  <a type="button" class="btn-readmore" data-toggle="modal" data-target="#orderDetail<?= $order_info['order_num'] ?>">查詢詳情</a>
                 </td>
+                <td><button class="btn btn-readmore btn-outline-uncle my-1" type="submit" style="width: auto"><a>儲存</a></button></td>
               </tr>
-            <?php
-            }
-            ?>
-          </tbody>
-        </table>
-        <?php
-        foreach ($order_details as $order_detail) {
-          $name_zh=$order_detail["product_id"]
-        ?>
-          <div id="orderDetail<?= $order["id"] ?>" class="modal fade tabindex=" -1">
-            <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">產品名稱</th>
-                      <th scope="col">數量</th>
-                      <th scope="col">價格</th>
-                      <th scope="col">備註</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php
+            </form>
+          <?php
+          }
+          ?>
+        </tbody>
+      </table>
 
-                  // foreach(){
+      <?php
+      foreach ($order_infos as $order_info) {
+      ?>
+        <div id="orderDetail<?= $order_info['order_num'] ?>" class="modal fade" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">產品名稱</th>
+                    <th scope="col">數量</th>
+                    <th scope="col">備註</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  foreach ($order_details as $order_detail) {
+                    if ($order_info["order_num"] == $order_detail["order_num"]) {
                   ?>
-                    <tr>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td></td>
-                    </tr>
-                    <?php
-                    // }
-                    ?>
-                  </tbody>
-                </table>
-              </div>
+                      <tr>
+                        <td>
+                          <?php
+                          foreach ($products as $product) {
+                            if ($product["product_num"] == $order_detail["product_num"]) {
+                              $order_detail["product_num"] = $product["name_zh"];
+                              echo $order_detail["product_num"];
+                            }
+                          }
+                          ?>
+                        </td>
+                        <td><?= $order_detail["count"] ?></td>
+                        <td><textarea cols="30" rows="2" name="order_info_singleNote[]"><?= $order_detail["ordernote"] ?></textarea></td>
+                      </tr>
+                  <?php
+                    }
+                  }
+                  ?>
+                </tbody>
+              </table>
             </div>
           </div>
-        <?php
-        }
-        ?>
-
-        <div class="text-right">
-          <button type="submit" class="btn btn-outline-uncle">儲存</button>
         </div>
-      </form>
+      <?php
+      }
+      ?>
+    </div>
+
     </div>
   </section>
   <!-- 訂單管理end -->
@@ -316,7 +355,6 @@ $order_details = select('order_detail', $field, $select_data);
   <!-- footer start -->
   <?php include("footer.php") ?>
   <!-- footer end -->
-
 
   <!-- bootstrap -->
   <script src="js/jquery-3.4.1.min.js"></script>
@@ -354,6 +392,50 @@ $order_details = select('order_detail', $field, $select_data);
       $(target).removeClass("btn btn-outline-uncle");
     }
     // 選單按鈕選擇 end
+
+
+    function encodeUpdate(e) {
+      <?php
+      foreach ($products as $product) {
+      ?>
+        switch (e) {
+          case "<?= $product['id'] ?>":
+            var selectedfile = document.getElementById("updateImg<?= $product['id'] ?>").files;
+            if (selectedfile.length > 0) {
+              var imageFile = selectedfile[0];
+              var fileReader = new FileReader();
+              fileReader.onload = function(fileLoadedEvent) {
+                var srcData = fileLoadedEvent.target.result;
+                var newImage = document.createElement('img');
+                newImage.src = srcData;
+                document.getElementById("updateImgshow<?= $product['id'] ?>").innerHTML = newImage.outerHTML;
+                document.getElementById("updateImgtxt<?= $product['id'] ?>").innerHTML = document.getElementById("updateImgshow<?= $product['id'] ?>").innerHTML;
+              }
+              fileReader.readAsDataURL(imageFile);
+            }
+            break;
+        }
+      <?php
+      }
+      ?>
+    }
+
+
+    function encodeAdd() {
+      var selectedfile = document.getElementById("addImg").files;
+      if (selectedfile.length > 0) {
+        var imageFile = selectedfile[0];
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent) {
+          var srcData = fileLoadedEvent.target.result;
+          var newImage = document.createElement('img');
+          newImage.src = srcData;
+          document.getElementById("imgshow").innerHTML = newImage.outerHTML;
+          document.getElementById("txt").innerHTML = document.getElementById("imgshow").innerHTML;
+        }
+        fileReader.readAsDataURL(imageFile);
+      }
+    }
   </script>
 </body>
 

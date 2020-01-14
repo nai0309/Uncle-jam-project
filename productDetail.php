@@ -57,8 +57,15 @@
     foreach ($products as $product) {
     ?>
       <div class="container">
-        <div class="media">
-          <img src="<?= ($product['img'] != null) ? $product['img'] : 'img/product/cake-chcolate.jpg'; ?>" class="align-self-center mr-3" alt="..." width="40%">
+        <div class="media proDetailImg">
+          <?php
+          if ($product['img'] != null) {
+            echo $product['img'];
+          } else {
+            echo '<img src="img/product/cake-chcolate.jpg" alt="請補圖" title="' . $product['name_zh'] . '">';
+          }
+          ?>
+          <!-- <img src="<?= ($product['img'] != null) ? $product['img'] : 'img/product/cake-chcolate.jpg'; ?>" class="align-self-center mr-3" alt="..." width="40%"> -->
 
           <form action="addToCart.php?do=multipleProduct&productToCart=<?= $product['id'] ?>" method="post">
             <div class="media-body">
@@ -86,13 +93,6 @@
         </div>
       </div>
     <?php
-    }
-    if (isset($_POST['submitbtn'])) {
-      if (isset($_SESSION["login"])) {
-        $this->check('');
-      }else{
-        $this->check('login');
-      }
     }
     ?>
   </section>
@@ -146,23 +146,6 @@
       });
       $(target).addClass("active");
       $(target).removeClass("btn btn-outline-uncle");
-    }
-
-
-
-    function check(e) {
-      switch (e) {
-        case "addToCart":
-          document.getElementById('addCartBtn').type = "submit";
-          break;
-        case "login":
-          loginInfo();
-          break;
-      }
-    }
-
-    function loginInfo() {
-      alert('請先登入會員');
     }
   </script>
 </body>

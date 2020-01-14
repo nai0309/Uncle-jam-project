@@ -62,7 +62,13 @@
                   <img class="img-fluid" src="img/more.png" alt="more">
                 </a>
               </div>
-              <img class="img-fluid" src="<?= ($product['img'] != null) ? $product['img'] : 'img/product/cake-chcolate.jpg'; ?>" alt="巧克力蛋糕">
+              <?php
+                    if ($product['img'] != null) {
+                      echo $product['img'];
+                    } else {
+                      echo '<img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="請補圖" title="'.$product['name_zh'].'">';
+                    }
+                    ?>
             </div>
             <div class="pro_info">
               <a href="productDetail.php?type=<?= $product['type'] ?>&proid=<?= $product['product_num'] ?>">

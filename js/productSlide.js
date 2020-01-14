@@ -9,10 +9,10 @@ const slideData = [
 
   {
     index: 1,
-    headline: '腰果醬',
+    headline: '醬系列',
     button: 'Order now',
     src: './img/product/pie-taro-slide.jpg',
-    link: 'product.php?type=腰果醬&select=productCashew'
+    link: 'product.php?type=醬系列&select=productCashew'
   },
 
   {

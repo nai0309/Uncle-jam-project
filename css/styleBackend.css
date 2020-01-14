@@ -26,9 +26,6 @@ body {
 
 
 /* 訂購紀錄 */
-
-
-
 .btn, .btn-outline-uncle{
     border-radius: 20px;
     width: 100px;
@@ -51,4 +48,16 @@ body {
 .active:focus{
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* 商品新增img */
+#imgshow img{
+    max-width: 100%;
+    height: auto;
+}
+/* 商品上傳img更新 */
+.uploadImg img{
+    max-width: 100%;
+    width: 100px;
+    height: auto;
 }

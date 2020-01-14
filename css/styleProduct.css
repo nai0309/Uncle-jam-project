@@ -26,6 +26,8 @@
 
 .pro_img img {
     border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 .pro_img {
@@ -85,4 +87,17 @@
 /* 商品詳情頁 */
 #productDetail .form-control{
     width: auto !important;
+}
+
+.proDetailImg img{
+    width: 50%;
+    margin: 1rem 3rem;
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+/* 購物車圖片 */
+.shoppingCartImg img{
+    width: 120px;
 }

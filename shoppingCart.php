@@ -4,15 +4,30 @@
 <head>
   <?php
   include("header.php");
+
+  // 驗證是否登入會員，登入才可看此頁
   if (isset($_SESSION['login'])) {
     $member = $_SESSION['login'];
-  }else{
-    header("location:index.php");
+  } else {
+    echo '<script>
+    confirm("請先登入會員");
+    location.href="product.php";
+    </script>';
   }
+
+  // 判斷購物車是否有商品所顯示的畫面
   if (isset($_SESSION["shoppingcart"])) {
     $addCartPros = $_SESSION["shoppingcart"];
   } else {
     $addCartPros = [];
+  }
+  // print_r($_SESSION["shoppingcart"]);
+  // print_r($_SESSION["single_note"]);
+
+  if (isset($_SESSION["single_note"])) {
+    $proSingleNote = $_SESSION["single_note"];
+  } else {
+    $proSingleNote = [];
   }
 
   if ($addCartPros != null) {
@@ -24,8 +39,9 @@
   } else {
     $column_text = '()';
   }
-  // echo json_encode($column_text);
 
+  // echo json_encode($column_text);
+  // echo "<hr>";
 
   $sql = $db->prepare("SELECT * FROM product WHERE id IN " . $column_text);
   $sql->execute();
@@ -74,7 +90,7 @@
   <!-- 空的購物車 start -->
 
   <div id="shoppingCart">
-    <form action="api.php?do=orderAdd" method="post">
+    <form action="addToCart.php?do=shopping_cart" method="post">
       <input type="hidden" name="order_num" value="<?= $order_num ?>">
       <!-- 購物車清單 start -->
       <section id="cartList" class="my-5">
@@ -104,16 +120,25 @@
               ?>
                 <tr>
                   <td scope="row"><?= $i += 1 ?></td>
-                  <td><img class="img-fluid" src="img/product/cake-chcolate.jpg" alt="巧克力蛋糕" width="100px"></td>
+                  <td class="shoppingCartImg">
+                    <?php
+                    if ($product['img'] != null) {
+                      echo $product['img'];
+                    } else {
+                      echo '<img class="img-fluid align-self-center my-3 mx-5" src="img/product/cake-chcolate.jpg" alt="請補圖" title="' . $product['name_zh'] . '">';
+                    }
+                    ?>
+                  </td>
                   <td class="en-font"><?= $product['product_num'] ?></td>
-                  <input type="hidden" name="product_num" value="<?= $product['product_num'] ?>">
+                  <input type="hidden" name="product_num[]" value="<?= $product['product_num'] ?>">
+                  <input type="hidden" name="product_id[]" value="<?= $product['id'] ?>">
                   <td>
                     <p class="pro_name"><?= $product['name_zh'] ?></p>
                     <p class="pro_name_en"><?= $product['name_en'] ?></p>
                   </td>
                   <td><input type="number" min="1" max="10" value="<?php echo $_SESSION['shoppingcart'][$product['id']];
-                  $qty = $_SESSION['shoppingcart'][$product['id']];
-                  ?>">
+                                                                    $qty = $_SESSION['shoppingcart'][$product['id']];
+                                                                    ?>" name="qty[]">
                   </td>
                   <td class="en-font">$ <?php echo $product['price'];
                                         $price = $product['price'];
@@ -122,14 +147,10 @@
                                         array_push($total, $sum);
                                         ?></td>
                   <td>
-                    <textarea name="single_note" rows="3"></textarea>
+                    <textarea name="single_note[]" rows="3"><?= $proSingleNote[$product['id']] ?></textarea>
                   </td>
                   <td class="text-center">
-                    <button class="btn-readmore btn-outline-uncle my-1" type="submit" style="width: auto"><a>修改</a></button>
-                    <br>
-                    <button class="btn-danger" style="width: auto;border-radius: 20px;">
-                      <a href="api.php?do=productDel&delId=<?= $product['id'] ?>" style="color: white">刪除</a>
-                    </button>
+                    <button class="btn btn-secondary" style="width: auto;border-radius: 20px;" name="deleted" value="<?= $product['id'] ?>">刪除</button>
                   </td>
                 </tr>
               <?php
@@ -138,21 +159,31 @@
             </tbody>
           </table>
           <div>
-            <table class="text-right" style="width: auto;float:right">
+            <table style="width: auto;float: right">
+              <tr>
+                <td colspan="3" class="text-center">
+                  <button class="btn btn-readmore btn-outline-uncle my-1" type="button" style="width: auto" onclick="location.href='product.php'">繼續購物</button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="text-center">
+                  <button class="btn btn-readmore btn-outline-uncle my-1" type="submit" style="width: auto" name="update" value="update">修改確認</button>
+                </td>
+              </tr>
               <tr>
                 <td>總　　額</td>
                 <td>：</td>
-                <td>$ <?= array_sum($total) ?></td>
+                <td class="en-font">$ <?= array_sum($total) ?></td>
               </tr>
               <tr>
                 <td>運　　費</td>
                 <td>：</td>
-                <td>$ <?= $shipFee ?></td>
+                <td class="en-font">$ <?= $shipFee ?></td>
               </tr>
               <tr>
                 <td>應付金額</td>
                 <td>：</td>
-                <td>$ <?= array_sum($total) + $shipFee ?></td>
+                <td class="en-font">$ <?= array_sum($total) + $shipFee ?></td>
                 <input type="hidden" name="total" value="<?= array_sum($total) + $shipFee ?>">
               </tr>
             </table>
@@ -191,7 +222,7 @@
           </div>
           <small style="color:red">*付款方式目前僅提供貨到付款及轉帳服務</small>
           <div class="text-center">
-            <input type="submit" name="submitbtn" class="btn btn-outline-uncle my-3" value="訂購確認">
+            <input type="submit" name="order_confirm" class="btn btn-outline-uncle my-3" value="訂購確認">
           </div>
         </div>
       </section>
@@ -199,20 +230,23 @@
     </form>
   </div>
 
-  <?php
-  if (isset($_POST['submitbtn'])) {
-    $this->thanksOrder();
-  }
-  ?>
-
   <!-- footer start -->
   <?php include("footer.php") ?>
   <!-- footer end -->
 
+  <?php
+  if (isset($_SESSION['confirm_type'])) {
+    if ($_SESSION['confirm_type'] == "error") {
+      echo '<script>alert("必填資料未填！")</script>';
+    }
+    $_SESSION['confirm_type'] = "";
+  }
+  ?>
+
   <!-- jquery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script>
-    var cartState = "<?= (isset($_SESSION["shoppingcart"])) ? 'shoppingCart' : 'cartEmpty'; ?>"
+    var cartState = "<?= (isset($_SESSION["shoppingcart"]) && $_SESSION["shoppingcart"] != []) ? 'shoppingCart' : 'cartEmpty'; ?>"
     cartShow(cartState);
 
     function cartShow(state) {
@@ -224,38 +258,6 @@
           $("#shoppingCart").hide();
           break;
       }
-    }
-
-    var orderNum = <?= $order_num ?>;
-
-    function thanksOrder() {
-      $("#shoppingCart").html(`
-      <section id="thanksOrder" class="m-5">
-    <div class="container h-100">
-      <div class="row align-items-center">
-        <div class="d-none d-sm-block col-md-6">
-          <img class="img-fluid" src="img/thanksorder.png" alt="thanksorder">
-        </div>
-        <div class="col-12 col-md-6" style="line-height: 1.8rem;color:rgb(110, 110, 110)">
-          <h2 class="border-bottom">感謝您的訂購</h2>
-          <b>訂單編號：${orderNum}</b>
-          <p>
-            付款資訊如下：<br>
-            匯款銀行名稱：第一銀行北土城分行<br>
-            匯款銀行代號：007<br>
-            帳號：207-68-022026<br>
-            戶名：王鵬志<br>
-            <i style="color: red">ATM轉帳付款完成後，請提供帳號後五碼</i><br>
-            聯絡電話：02-29811111
-          </p>
-        </div>
-      </div>
-      <div class="text-center">
-        <button class="btn btn-outline-uncle my-3"><a href="index.php">回首頁</a></button>
-      </div>
-    </div>
-  </section>
-    `)
     }
   </script>
 
