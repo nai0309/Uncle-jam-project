@@ -37,7 +37,6 @@
   <section id="productBanner">
     <div class="banImg">
       <div class="banText container-fluid d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4">會員專區</h1>
       </div>
       <img src="img/banner_member.jpg" alt="會員banner" title="會員banner">
     </div>
@@ -45,13 +44,13 @@
   <!-- banner end -->
 
   <!-- 會員服務 start -->
-  <section id="serveList" class="d-flex align-items-center justify-content-center ">
-    <div class="btnlist d-none d-sm-block">
+  <section id="serveList" class="servebtn d-flex align-items-center justify-content-center ">
+    <div class="btnlist">
       <!-- <a href="member.php?type=infoManagement"> -->
-        <button class="listSelect active mx-3" onclick="select('infoManagement');active(this)">資料管理</button>
+        <button class="listSelect active mx-md-3" onclick="select('infoManagement');active(this)">資料管理</button>
       <!-- </a> -->
       <!-- <a href="member.ph?type=orderInfo"> -->
-        <button class="listSelect btn btn-outline-uncle mx-3" onclick="select('orderInfo');active(this)">訂單查詢</button>
+        <button class="listSelect btn btn-outline-uncle mx-md-3" onclick="select('orderInfo');active(this)">訂單查詢</button>
       <!-- </a> -->
     </div>
   </section>

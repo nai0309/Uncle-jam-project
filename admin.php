@@ -40,18 +40,18 @@
 
   <!-- 後台服務 start -->
   <section id="serveList" class="d-flex align-items-center justify-content-center ">
-    <div class="btnlist d-none d-sm-block">
-      <button class="listSelect active mx-3" onclick="select('memberManagement');active(this)">
+    <div class="btnlist">
+      <button class="listSelect active mx-md-3" onclick="select('memberManagement');active(this)">
         <!-- <a href="admin.php?type=memberManagement"> -->
         會員管理
         <!-- </a> -->
       </button>
-      <button class="listSelect btn btn-outline-uncle mx-3" onclick="select('productManagement');active(this)">
+      <button class="listSelect btn btn-outline-uncle mx-md-3" onclick="select('productManagement');active(this)">
         <!-- <a href="admin.php?type=productManagement"> -->
         商品管理
         <!-- </a> -->
       </button>
-      <button class="listSelect btn btn-outline-uncle mx-3" onclick="select('orderManagement');active(this)">
+      <button class="listSelect btn btn-outline-uncle mx-md-3" onclick="select('orderManagement');active(this)">
         <!-- <a href="admin.php?type=orderManagement"> -->
         訂單管理
         <!-- </a> -->

@@ -10,7 +10,7 @@ $member_type = $_SESSION['login']['logintype'];
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
   <div class="collapse navbar-collapse" id="navbar">
 
-    <ul class="navbar-nav m-auto text-center">
+    <ul id="navbarcenter" class="navbar-nav m-auto">
       <li class="nav-item"><a class="nav-link mr-4" href="index.php#">首頁</a></li>
       <li class="nav-item"><a class="nav-link mr-4" href="index.php#brandStory">品牌故事</a></li>
       <li class="nav-item dropdown">

@@ -92,9 +92,10 @@ a:hover {
   #orderNote {
     height: 100%;
   }
+  #navbarcenter {
+    text-align: center;
+  }
 }
-
-/* carousel */
 
 @media (max-width: 576px) {
   .carousel-item img {
@@ -107,6 +108,9 @@ a:hover {
   #brandStory,
   #orderNote {
     height: auto;
+  }
+  #navbarcenter {
+    text-align: left;
   }
 }
 

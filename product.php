@@ -53,7 +53,7 @@
         <?php
         foreach ($products as $product) {
         ?>
-          <div class="product col-6 col-md-4 text-center">
+          <div class="product col-6 col-md-4 text-center singlepro_display">
             <div class="pro_img">
               <div class="pro_more">
                 <a href="productDetail.php?type=<?= $product['type'] ?>&proid=<?= $product['product_num'] ?>">

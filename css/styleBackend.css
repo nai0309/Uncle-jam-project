@@ -18,10 +18,26 @@ body {
 }
 
 @media (max-width: 576px) {
-    #serveList {
+    #serveList, .servebtn button {
         height: 2rem;
+        margin: 2rem 0;
     }
+
+    #memberManagement, #orderInfo, #orderManagement, #productManagement,#infoManagement{
+        margin-bottom: 2rem;
+    }
+
+
     
+}
+
+
+
+@media (min-width: 768px) {
+    #memberManagement, #orderInfo, #orderManagement, #productManagement,#infoManagement{
+        margin-bottom: 25rem;
+    }
+
 }
 
 
@@ -60,8 +76,4 @@ body {
     max-width: 100%;
     width: 100px;
     height: auto;
-}
-
-#memberManagement, #orderInfo, #orderManagement, #productManagement,#infoManagement{
-    margin-bottom: 25rem;
 }
