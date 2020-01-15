@@ -36,8 +36,8 @@
   <!-- banner end -->
 
   <!-- thanks order start -->
-  <section id="thanksOrder" class="m-5">
-    <div class="container h-100">
+  <section id="thanksOrder" class="m-5 h-50">
+    <div class="container h-100 d-flex flex-column justify-content-center">
       <div class="row align-items-center">
         <div class="d-none d-sm-block col-md-6">
           <img class="img-fluid" src="img/thanksorder.png" alt="thanksorder">

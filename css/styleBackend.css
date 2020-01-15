@@ -61,3 +61,7 @@ body {
     width: 100px;
     height: auto;
 }
+
+#memberManagement, #orderInfo, #orderManagement, #productManagement,#infoManagement{
+    margin-bottom: 25rem;
+}

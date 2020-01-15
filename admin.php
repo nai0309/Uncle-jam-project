@@ -61,7 +61,7 @@
   <!-- 後台服務 end -->
 
   <!-- 會員管理start -->
-  <section id="memberManagement" class="mb-5">
+  <section id="memberManagement">
     <div class="container-fluid table-responsive">
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -99,7 +99,7 @@
   <!-- 會員管理end -->
 
   <!-- 商品管理start -->
-  <section id="productManagement" class="mb-5">
+  <section id="productManagement">
     <div class="container-fluid table-responsive">
       <div class="text-right my-2">
         <button type="button" class="btn btn-outline-uncle" data-toggle="modal" data-target="#productAdd">新增產品</button>
@@ -249,7 +249,7 @@
   <!-- 商品管理end -->
 
   <!-- 訂單管理start -->
-  <section id="orderManagement" class="mb-5">
+  <section id="orderManagement">
     <div class="container-fluid table-responsive">
       <table class="table table-striped">
         <thead class="thead-dark">

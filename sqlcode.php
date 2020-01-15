@@ -1,7 +1,7 @@
 <?php
 // session_start();
 $db = new PDO("mysql:host=127.0.0.1;dbname=s1080412;charset=utf8", "root", "");
-// $db = new PDO("mysql:host=220.128.133.15/s1080412;dbname=s1080412;charset=utf8", "root", "");
+// $db = new PDO("mysql:host=localhost;dbname=s1080412;charset=utf8", "s1080412", "s1080412");
 date_default_timezone_set('Asia/Taipei');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 

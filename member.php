@@ -8,6 +8,10 @@
     header("location:index.php");
   }
   $member = $_SESSION['login'];
+  // print_r($member);
+  // return;
+
+  
 
   if (!empty($member["id"])) {
     $field = ["member_id"];
@@ -43,14 +47,18 @@
   <!-- 會員服務 start -->
   <section id="serveList" class="d-flex align-items-center justify-content-center ">
     <div class="btnlist d-none d-sm-block">
-      <button class="listSelect active mx-3" onclick="select('infoManagement');active(this)">資料管理</button>
-      <button class="listSelect btn btn-outline-uncle mx-3" onclick="select('orderInfo');active(this)">訂單查詢</button>
+      <!-- <a href="member.php?type=infoManagement"> -->
+        <button class="listSelect active mx-3" onclick="select('infoManagement');active(this)">資料管理</button>
+      <!-- </a> -->
+      <!-- <a href="member.ph?type=orderInfo"> -->
+        <button class="listSelect btn btn-outline-uncle mx-3" onclick="select('orderInfo');active(this)">訂單查詢</button>
+      <!-- </a> -->
     </div>
   </section>
   <!-- 會員服務 end -->
 
   <!-- 資料管理 start -->
-  <section id="infoManagement" class="mb-5">
+  <section id="infoManagement">
     <div class="container">
       <form method="post" action="api.php?do=memberMdy">
         <input type="hidden" name="id" value="<?= $member["id"] ?>">
@@ -95,7 +103,7 @@
   <!-- 資料管理 end -->
 
   <!-- 訂單查詢 start -->
-  <section id="orderInfo" class="mb-5">
+  <section id="orderInfo">
     <div class="container-fluid table-responsive">
       <table class="table table-striped">
         <thead class="thead-dark">

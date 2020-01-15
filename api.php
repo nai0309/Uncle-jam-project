@@ -192,6 +192,5 @@ if (isset($_GET["do"])) {
                 header("location:" . $pre_url);
                 return;
             break;
-
     }
 }
